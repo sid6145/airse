@@ -17,319 +17,211 @@
   --sans:'Inter',sans-serif;
 }
 body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh}
-.app{max-width:960px;margin:0 auto;padding:12px}
-@media(max-width:768px){.app{padding:10px}}
-@media(max-width:480px){.app{padding:8px}}
-.sys-header{text-align:center;padding:12px 0 8px;border-bottom:1px solid var(--border);margin-bottom:12px;position:relative}
-@media(max-width:480px){.sys-header{padding:10px 0 6px;margin-bottom:10px}}
-.sys-tag{font-family:var(--mono);font-size:9px;color:var(--blue);letter-spacing:3px;margin-bottom:3px}
-@media(max-width:480px){.sys-tag{font-size:8px;letter-spacing:2px}}
-.sys-title{font-size:20px;font-weight:600;color:var(--text-bright)}
-@media(max-width:480px){.sys-title{font-size:18px}}
+.app{max-width:960px;margin:0 auto;padding:16px}
+.sys-header{text-align:center;padding:16px 0 10px;border-bottom:1px solid var(--border);margin-bottom:16px;position:relative}
+.sys-tag{font-family:var(--mono);font-size:10px;color:var(--blue);letter-spacing:4px;margin-bottom:4px}
+.sys-title{font-size:22px;font-weight:600;color:var(--text-bright)}
 .sys-title span{color:var(--blue)}
-.nav{display:flex;gap:3px;margin-bottom:12px;background:var(--bg2);padding:3px;border-radius:8px;border:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch}
-@media(max-width:480px){.nav{gap:2px;padding:2px;margin-bottom:10px}}
-.nav-btn{flex:1;min-width:60px;padding:6px 6px;background:transparent;border:none;border-radius:6px;color:var(--text-dim);font-size:10px;font-family:var(--sans);cursor:pointer;white-space:nowrap;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:3px}
-@media(max-width:480px){.nav-btn{min-width:55px;padding:5px 4px;font-size:9px;gap:2px}}
-.nav-btn i{font-size:12px}
-@media(max-width:480px){.nav-btn i{font-size:11px}}
+.nav{display:flex;gap:3px;margin-bottom:16px;background:var(--bg2);padding:4px;border-radius:8px;border:1px solid var(--border);overflow-x:auto}
+.nav-btn{flex:1;min-width:70px;padding:7px 8px;background:transparent;border:none;border-radius:6px;color:var(--text-dim);font-size:11px;font-family:var(--sans);cursor:pointer;white-space:nowrap;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:4px}
+.nav-btn i{font-size:13px}
 .nav-btn:hover{color:var(--text);background:var(--bg3)}
 .nav-btn.active{background:var(--blue-dim);color:var(--blue);border:1px solid var(--border2)}
 .panel{display:none}.panel.active{display:block}
-.section-title{font-family:var(--mono);font-size:11px;color:var(--blue);letter-spacing:1px}
-@media(max-width:480px){.section-title{font-size:10px}}
-.row-between{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:6px}
-@media(max-width:480px){.row-between{margin-bottom:8px;gap:5px}}
-.btn-primary{background:var(--blue-dim);border:1px solid var(--border2);border-radius:6px;color:var(--blue);font-size:11px;font-family:var(--sans);padding:5px 10px;cursor:pointer;display:flex;align-items:center;gap:3px;transition:all .15s;white-space:nowrap}
-@media(max-width:480px){.btn-primary{font-size:10px;padding:4px 8px}}
+.section-title{font-family:var(--mono);font-size:12px;color:var(--blue);letter-spacing:1px}
+.row-between{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.btn-primary{background:var(--blue-dim);border:1px solid var(--border2);border-radius:6px;color:var(--blue);font-size:12px;font-family:var(--sans);padding:6px 12px;cursor:pointer;display:flex;align-items:center;gap:4px;transition:all .15s;white-space:nowrap}
 .btn-primary:hover{background:#2a4f7a}
-.btn-primary i{font-size:12px}
-.btn-sm{background:none;border:1px solid var(--border);border-radius:4px;color:var(--text-dim);font-size:10px;padding:3px 8px;cursor:pointer;font-family:var(--sans);transition:all .15s}
-@media(max-width:480px){.btn-sm{font-size:9px;padding:2px 6px}}
+.btn-primary i{font-size:13px}
+.btn-sm{background:none;border:1px solid var(--border);border-radius:4px;color:var(--text-dim);font-size:11px;padding:4px 9px;cursor:pointer;font-family:var(--sans);transition:all .15s}
 .btn-sm:hover{border-color:var(--border2);color:var(--text)}
 
 /* STATUS */
-.status-top{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
-@media(max-width:768px){.status-top{grid-template-columns:1fr;gap:8px}}
-@media(max-width:480px){.status-top{gap:6px;margin-bottom:8px}}
-.player-card{grid-column:1/-1;background:var(--panel);border:1px solid var(--border2);border-radius:10px;padding:12px;display:flex;align-items:center;gap:12px;position:relative;overflow:hidden}
-@media(max-width:480px){.player-card{padding:10px;gap:10px;flex-direction:column;text-align:center}}
+.status-top{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+@media(max-width:580px){.status-top{grid-template-columns:1fr}}
+.player-card{grid-column:1/-1;background:var(--panel);border:1px solid var(--border2);border-radius:10px;padding:16px;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden}
 .player-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),var(--gold),transparent)}
-.avatar{width:60px;height:60px;border-radius:50%;background:var(--bg3);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:22px;color:var(--gold);flex-shrink:0}
-@media(max-width:480px){.avatar{width:50px;height:50px;font-size:20px}}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--bg3);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:24px;color:var(--gold);flex-shrink:0}
 .player-info{flex:1;min-width:0}
-@media(max-width:480px){.player-info{width:100%}}
-.player-name-row{display:flex;align-items:center;gap:6px;margin-bottom:2px;flex-wrap:wrap;justify-content:flex-start}
-@media(max-width:480px){.player-name-row{justify-content:center}}
-.player-name{font-size:16px;font-weight:600;color:var(--text-bright);font-family:var(--mono);cursor:pointer}
-@media(max-width:480px){.player-name{font-size:14px}}
-.rank-badge{padding:2px 6px;border-radius:4px;font-family:var(--mono);font-size:11px;font-weight:600;border:1px solid}
-@media(max-width:480px){.rank-badge{font-size:10px;padding:1px 5px}}
-.title-badge{font-size:9px;color:var(--purple);font-family:var(--mono);padding:2px 6px;border:1px solid var(--purple);border-radius:3px;background:rgba(159,122,234,0.1)}
-@media(max-width:480px){.title-badge{font-size:8px;padding:1px 5px}}
-.xp-row{display:flex;align-items:center;gap:6px;margin-top:6px;flex-wrap:wrap}
-@media(max-width:480px){.xp-row{margin-top:4px}}
-.xp-label{font-family:var(--mono);font-size:9px;color:var(--text-dim);white-space:nowrap}
-@media(max-width:480px){.xp-label{font-size:8px}}
-.xp-bar-wrap{flex:1;min-width:80px;height:6px;background:var(--bg3);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
-@media(max-width:480px){.xp-bar-wrap{min-width:60px;height:5px}}
+.player-name-row{display:flex;align-items:center;gap:8px;margin-bottom:2px;flex-wrap:wrap}
+.player-name{font-size:18px;font-weight:600;color:var(--text-bright);font-family:var(--mono);cursor:pointer}
+.rank-badge{padding:2px 8px;border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600;border:1px solid}
+.title-badge{font-size:10px;color:var(--purple);font-family:var(--mono);padding:2px 7px;border:1px solid var(--purple);border-radius:3px;background:rgba(159,122,234,0.1)}
+.xp-row{display:flex;align-items:center;gap:8px;margin-top:6px}
+.xp-label{font-family:var(--mono);font-size:10px;color:var(--text-dim);white-space:nowrap}
+.xp-bar-wrap{flex:1;height:7px;background:var(--bg3);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
 .xp-bar{height:100%;border-radius:4px;background:var(--gold);transition:width .5s}
-.level-num{font-family:var(--mono);font-size:18px;color:var(--gold);font-weight:600}
-@media(max-width:480px){.level-num{font-size:16px}}
-.streak-badge{display:flex;align-items:center;gap:4px;font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:4px;background:rgba(245,183,49,0.1);border:1px solid var(--gold-dim);color:var(--gold);white-space:nowrap}
-@media(max-width:480px){.streak-badge{font-size:9px;padding:1px 6px}}
-.multiplier{font-size:9px;color:var(--green);font-family:var(--mono)}
-@media(max-width:480px){.multiplier{font-size:8px}}
+.level-num{font-family:var(--mono);font-size:20px;color:var(--gold);font-weight:600}
+.streak-badge{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;padding:3px 9px;border-radius:4px;background:rgba(245,183,49,0.1);border:1px solid var(--gold-dim);color:var(--gold);white-space:nowrap}
+.multiplier{font-size:10px;color:var(--green);font-family:var(--mono)}
 
 /* Stat card */
-.stat-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px}
-@media(max-width:480px){.stat-card{padding:10px}}
-.stat-card-title{font-family:var(--mono);font-size:9px;color:var(--text-dim);letter-spacing:2px;margin-bottom:10px}
-@media(max-width:480px){.stat-card-title{font-size:8px;margin-bottom:8px}}
-.stat-row{display:flex;align-items:center;gap:6px;margin-bottom:7px}
-@media(max-width:480px){.stat-row{margin-bottom:6px;gap:5px}}
-.stat-name{font-family:var(--mono);font-size:10px;width:30px;flex-shrink:0}
-@media(max-width:480px){.stat-name{font-size:9px;width:28px}}
-.stat-bar-wrap{flex:1;height:4px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.stat-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px}
+.stat-card-title{font-family:var(--mono);font-size:10px;color:var(--text-dim);letter-spacing:2px;margin-bottom:12px}
+.stat-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.stat-name{font-family:var(--mono);font-size:11px;width:32px;flex-shrink:0}
+.stat-bar-wrap{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden}
 .stat-bar{height:100%;border-radius:3px;transition:width .5s}
-.stat-val{font-family:var(--mono);font-size:10px;color:var(--text-bright);width:24px;text-align:right;flex-shrink:0}
-@media(max-width:480px){.stat-val{font-size:9px;width:22px}}
-.stat-plus{background:none;border:1px solid var(--border2);border-radius:3px;color:var(--blue);width:18px;height:18px;font-size:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;line-height:1}
-@media(max-width:480px){.stat-plus{width:16px;height:16px;font-size:11px}}
+.stat-val{font-family:var(--mono);font-size:11px;color:var(--text-bright);width:26px;text-align:right;flex-shrink:0}
+.stat-plus{background:none;border:1px solid var(--border2);border-radius:3px;color:var(--blue);width:18px;height:18px;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;line-height:1}
 .stat-plus:hover{background:var(--blue-dim)}
-.stat-points-row{font-family:var(--mono);font-size:9px;color:var(--gold);text-align:right;margin-top:5px}
-@media(max-width:480px){.stat-points-row{font-size:8px}}
+.stat-points-row{font-family:var(--mono);font-size:10px;color:var(--gold);text-align:right;margin-top:6px}
 
 /* Rank card */
-.rank-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}
-@media(max-width:480px){.rank-card{padding:10px}}
-.big-rank{font-family:var(--mono);font-size:42px;font-weight:700;line-height:1;margin:4px 0}
-@media(max-width:480px){.big-rank{font-size:36px;margin:3px 0}}
-.rank-ladder{display:flex;justify-content:center;gap:4px;margin-top:8px;flex-wrap:wrap}
-@media(max-width:480px){.rank-ladder{gap:3px;margin-top:6px}}
-.rank-pip{width:24px;height:24px;border-radius:4px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;color:var(--text-dim)}
-@media(max-width:480px){.rank-pip{width:20px;height:20px;font-size:9px}}
+.rank-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.big-rank{font-family:var(--mono);font-size:48px;font-weight:700;line-height:1;margin:6px 0}
+.rank-ladder{display:flex;justify-content:center;gap:5px;margin-top:10px;flex-wrap:wrap}
+.rank-pip{width:26px;height:26px;border-radius:4px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;color:var(--text-dim)}
 .rank-pip.done{border-color:var(--gold-dim);color:var(--gold)}
 .rank-pip.current{border-color:var(--gold);color:var(--gold);background:rgba(245,183,49,.12)}
-.rank-next-xp{font-family:var(--mono);font-size:9px;color:var(--text-dim);margin-top:6px}
-@media(max-width:480px){.rank-next-xp{font-size:8px;margin-top:4px}}
+.rank-next-xp{font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:8px}
 
 /* Radar chart */
-.radar-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}
-@media(max-width:480px){.radar-card{padding:10px}}
+.radar-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
 
 /* Weekly summary */
-.weekly-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px}
-@media(max-width:480px){.weekly-card{padding:10px}}
-.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:8px}
-@media(max-width:480px){.week-grid{gap:2px;margin-top:6px}}
+.weekly-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px}
+.week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:10px}
 .week-day{text-align:center}
-.week-label{font-family:var(--mono);font-size:8px;color:var(--text-dim);margin-bottom:2px}
-@media(max-width:480px){.week-label{font-size:7px}}
-.week-bar-wrap{height:35px;background:var(--bg3);border-radius:3px;overflow:hidden;display:flex;align-items:flex-end}
-@media(max-width:480px){.week-bar-wrap{height:30px}}
+.week-label{font-family:var(--mono);font-size:9px;color:var(--text-dim);margin-bottom:3px}
+.week-bar-wrap{height:40px;background:var(--bg3);border-radius:3px;overflow:hidden;display:flex;align-items:flex-end}
 .week-bar{width:100%;border-radius:3px;background:var(--blue);transition:height .4s}
-.week-val{font-family:var(--mono);font-size:8px;color:var(--text-dim);margin-top:2px}
-@media(max-width:480px){.week-val{font-size:7px}}
+.week-val{font-family:var(--mono);font-size:9px;color:var(--text-dim);margin-top:3px}
 
 /* Achievements */
-.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;margin-top:8px}
-@media(max-width:480px){.ach-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:5px}}
-.ach-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center;transition:border-color .15s}
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:10px}
+.ach-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center;transition:border-color .15s}
 .ach-item.unlocked{border-color:var(--gold-dim)}
-.ach-icon{font-size:18px;margin-bottom:4px}
-@media(max-width:480px){.ach-icon{font-size:16px;margin-bottom:3px}}
-.ach-name{font-size:10px;color:var(--text-bright);margin-bottom:2px}
-@media(max-width:480px){.ach-name{font-size:9px}}
-.ach-desc{font-size:9px;color:var(--text-dim);font-family:var(--mono)}
-@media(max-width:480px){.ach-desc{font-size:8px}}
+.ach-icon{font-size:20px;margin-bottom:5px}
+.ach-name{font-size:11px;color:var(--text-bright);margin-bottom:2px}
+.ach-desc{font-size:10px;color:var(--text-dim);font-family:var(--mono)}
 .ach-item.locked .ach-icon{filter:grayscale(1);opacity:.3}
 .ach-item.locked .ach-name{color:var(--text-dim)}
 
 /* QUESTS */
-.quest-filters{display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap}
-@media(max-width:480px){.quest-filters{gap:3px;margin-bottom:8px}}
-.filter-btn{padding:3px 9px;border-radius:20px;border:1px solid var(--border);background:none;color:var(--text-dim);font-size:9px;cursor:pointer;font-family:var(--sans);transition:all .15s;white-space:nowrap}
-@media(max-width:480px){.filter-btn{font-size:8px;padding:2px 8px}}
+.quest-filters{display:flex;gap:5px;margin-bottom:12px;flex-wrap:wrap}
+.filter-btn{padding:3px 10px;border-radius:20px;border:1px solid var(--border);background:none;color:var(--text-dim);font-size:10px;cursor:pointer;font-family:var(--sans);transition:all .15s;white-space:nowrap}
 .filter-btn:hover{color:var(--text);border-color:var(--border2)}
 .filter-btn.active{border-color:var(--blue);color:var(--blue);background:rgba(59,158,255,.08)}
-.quest-list{display:flex;flex-direction:column;gap:6px}
-@media(max-width:480px){.quest-list{gap:5px}}
-.quest-item{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:10px;transition:border-color .15s}
-@media(max-width:480px){.quest-item{padding:8px}}
+.quest-list{display:flex;flex-direction:column;gap:7px}
+.quest-item{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:12px;transition:border-color .15s}
 .quest-item:hover{border-color:var(--border2)}
 .quest-item.done{opacity:.5}
 .quest-item.overdue{border-color:rgba(232,85,85,.4)}
-.quest-top{display:flex;align-items:flex-start;gap:8px}
-@media(max-width:480px){.quest-top{gap:6px}}
-.quest-check{width:16px;height:16px;border-radius:3px;border:1px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--green);font-size:11px;background:none;cursor:pointer;transition:all .15s;margin-top:1px}
-@media(max-width:480px){.quest-check{width:14px;height:14px;font-size:10px}}
+.quest-top{display:flex;align-items:flex-start;gap:10px}
+.quest-check{width:18px;height:18px;border-radius:3px;border:1px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--green);font-size:12px;background:none;cursor:pointer;transition:all .15s;margin-top:1px}
 .quest-check:hover{background:rgba(63,214,138,.1);border-color:var(--green)}
 .quest-check.checked{background:rgba(63,214,138,.15);border-color:var(--green)}
 .quest-body{flex:1;min-width:0}
-.quest-name{font-size:12px;color:var(--text-bright);margin-bottom:3px}
-@media(max-width:480px){.quest-name{font-size:11px}}
+.quest-name{font-size:13px;color:var(--text-bright);margin-bottom:4px}
 .quest-item.done .quest-name{text-decoration:line-through;color:var(--text-dim)}
-.quest-meta{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
-@media(max-width:480px){.quest-meta{gap:4px}}
-.quest-cat{font-size:8px;padding:2px 5px;border-radius:3px;font-family:var(--mono)}
-@media(max-width:480px){.quest-cat{font-size:7px;padding:1px 4px}}
-.quest-xp{font-family:var(--mono);font-size:9px;color:var(--gold)}
-@media(max-width:480px){.quest-xp{font-size:8px}}
-.quest-stat{font-family:var(--mono);font-size:9px;color:var(--blue)}
-@media(max-width:480px){.quest-stat{font-size:8px}}
-.quest-diff{font-family:var(--mono);font-size:9px}
-@media(max-width:480px){.quest-diff{font-size:8px}}
-.quest-due{font-family:var(--mono);font-size:9px;color:var(--text-dim)}
-@media(max-width:480px){.quest-due{font-size:8px}}
+.quest-meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.quest-cat{font-size:9px;padding:2px 6px;border-radius:3px;font-family:var(--mono)}
+.quest-xp{font-family:var(--mono);font-size:10px;color:var(--gold)}
+.quest-stat{font-family:var(--mono);font-size:10px;color:var(--blue)}
+.quest-diff{font-family:var(--mono);font-size:10px}
+.quest-due{font-family:var(--mono);font-size:10px;color:var(--text-dim)}
 .quest-due.overdue{color:var(--red)}
-.quest-actions{display:flex;gap:3px;flex-shrink:0}
-.quest-del{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:13px;padding:1px;transition:color .15s}
-@media(max-width:480px){.quest-del{font-size:12px}}
+.quest-actions{display:flex;gap:4px;flex-shrink:0}
+.quest-del{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:14px;padding:2px;transition:color .15s}
 .quest-del:hover{color:var(--red)}
-.subtask-list{margin-top:6px;padding-left:3px;display:flex;flex-direction:column;gap:3px}
-@media(max-width:480px){.subtask-list{margin-top:5px}}
-.subtask-row{display:flex;align-items:center;gap:5px}
-.subtask-check{width:13px;height:13px;border-radius:2px;border:1px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--green);background:none;cursor:pointer;transition:all .15s}
-@media(max-width:480px){.subtask-check{width:12px;height:12px;font-size:8px}}
-.subtask-check:hover{background:rgba(63,214,138,.1);border-color:var(--green)}
+.subtask-list{margin-top:8px;padding-left:4px;display:flex;flex-direction:column;gap:4px}
+.subtask-row{display:flex;align-items:center;gap:6px}
+.subtask-check{width:14px;height:14px;border-radius:2px;border:1px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--green);background:none;cursor:pointer;transition:all .15s}
 .subtask-check.checked{background:rgba(63,214,138,.15);border-color:var(--green)}
-.subtask-text{font-size:11px;color:var(--text-dim)}
-@media(max-width:480px){.subtask-text{font-size:10px}}
+.subtask-text{font-size:12px;color:var(--text-dim)}
 .subtask-text.done{text-decoration:line-through}
-.subtask-progress{height:3px;background:var(--bg3);border-radius:2px;overflow:hidden;margin-top:4px}
+.subtask-progress{height:3px;background:var(--bg3);border-radius:2px;overflow:hidden;margin-top:5px}
 .subtask-progress-fill{height:100%;border-radius:2px;background:var(--green);transition:width .3s}
-.penalty-badge{font-family:var(--mono);font-size:8px;color:var(--red);padding:1px 5px;border:1px solid rgba(232,85,85,.3);border-radius:3px;background:rgba(232,85,85,.08)}
-@media(max-width:480px){.penalty-badge{font-size:7px;padding:1px 4px}}
-.recurring-badge{font-family:var(--mono);font-size:8px;color:var(--purple);padding:1px 5px;border:1px solid rgba(159,122,234,.3);border-radius:3px;background:rgba(159,122,234,.08)}
-@media(max-width:480px){.recurring-badge{font-size:7px;padding:1px 4px}}
+.penalty-badge{font-family:var(--mono);font-size:9px;color:var(--red);padding:2px 6px;border:1px solid rgba(232,85,85,.3);border-radius:3px;background:rgba(232,85,85,.08)}
+.recurring-badge{font-family:var(--mono);font-size:9px;color:var(--purple);padding:2px 6px;border:1px solid rgba(159,122,234,.3);border-radius:3px;background:rgba(159,122,234,.08)}
 
 /* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
-@media(max-width:768px){.skills-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px}}
-@media(max-width:480px){.skills-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:5px}}
-.skill-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;transition:border-color .15s}
-@media(max-width:480px){.skill-card{padding:10px}}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.skill-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;transition:border-color .15s}
 .skill-card:hover{border-color:var(--border2)}
-.skill-icon{font-size:22px;margin-bottom:5px}
-@media(max-width:480px){.skill-icon{font-size:20px}}
-.skill-name{font-size:11px;font-weight:500;color:var(--text-bright);margin-bottom:2px}
-@media(max-width:480px){.skill-name{font-size:10px}}
-.skill-area{font-size:8px;color:var(--text-dim);font-family:var(--mono);margin-bottom:6px}
-@media(max-width:480px){.skill-area{font-size:7px}}
-.skill-level-bar{height:4px;background:var(--bg3);border-radius:2px;margin-bottom:3px;overflow:hidden}
+.skill-icon{font-size:24px;margin-bottom:6px}
+.skill-name{font-size:12px;font-weight:500;color:var(--text-bright);margin-bottom:2px}
+.skill-area{font-size:9px;color:var(--text-dim);font-family:var(--mono);margin-bottom:8px}
+.skill-level-bar{height:4px;background:var(--bg3);border-radius:2px;margin-bottom:4px;overflow:hidden}
 .skill-level-fill{height:100%;border-radius:2px;transition:width .4s}
-.skill-lv{font-family:var(--mono);font-size:9px;margin-bottom:2px}
-@media(max-width:480px){.skill-lv{font-size:8px}}
-.skill-decay{font-family:var(--mono);font-size:8px;color:var(--red)}
-@media(max-width:480px){.skill-decay{font-size:7px}}
-.skill-btns{display:flex;gap:4px;margin-top:6px;justify-content:center;flex-wrap:wrap}
-@media(max-width:480px){.skill-btns{gap:3px;margin-top:5px}}
-.skill-btn{background:none;border:1px solid var(--border);border-radius:4px;color:var(--text-dim);font-size:10px;padding:2px 8px;cursor:pointer;font-family:var(--sans);transition:all .15s}
-@media(max-width:480px){.skill-btn{font-size:9px;padding:2px 6px}}
-.skill-req-badge{font-size:8px;color:var(--text-dim);font-family:var(--mono);margin-top:3px}
-@media(max-width:480px){.skill-req-badge{font-size:7px}}
+.skill-lv{font-family:var(--mono);font-size:10px;margin-bottom:2px}
+.skill-decay{font-family:var(--mono);font-size:9px;color:var(--red)}
+.skill-btns{display:flex;gap:5px;margin-top:8px;justify-content:center}
+.skill-btn{background:none;border:1px solid var(--border);border-radius:4px;color:var(--text-dim);font-size:11px;padding:3px 9px;cursor:pointer;font-family:var(--sans);transition:all .15s}
+.skill-req-badge{font-size:9px;color:var(--text-dim);font-family:var(--mono);margin-top:4px}
 .skill-locked{opacity:.5;pointer-events:none}
 
 /* LOG */
-.log-list{display:flex;flex-direction:column;gap:4px}
-@media(max-width:480px){.log-list{gap:3px}}
-.log-item{background:var(--panel);border:1px solid var(--border);border-left:3px solid;border-radius:0 6px 6px 0;padding:8px 10px;display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
-@media(max-width:480px){.log-item{padding:7px 8px;gap:6px}}
-.log-time{font-family:var(--mono);font-size:8px;color:var(--text-dim);flex-shrink:0;padding-top:1px;min-width:65px}
-@media(max-width:480px){.log-time{font-size:7px;min-width:60px}}
-.log-msg{font-size:11px;color:var(--text);flex:1;min-width:150px}
-@media(max-width:480px){.log-msg{font-size:10px;min-width:120px}}
-.log-xp{font-family:var(--mono);font-size:10px;color:var(--gold);flex-shrink:0}
-@media(max-width:480px){.log-xp{font-size:9px}}
+.log-list{display:flex;flex-direction:column;gap:5px}
+.log-item{background:var(--panel);border:1px solid var(--border);border-left:3px solid;border-radius:0 6px 6px 0;padding:9px 12px;display:flex;gap:10px;align-items:flex-start}
+.log-time{font-family:var(--mono);font-size:9px;color:var(--text-dim);flex-shrink:0;padding-top:2px;min-width:72px}
+.log-msg{font-size:12px;color:var(--text);flex:1}
+.log-xp{font-family:var(--mono);font-size:11px;color:var(--gold);flex-shrink:0}
 
 /* Modal */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;align-items:center;justify-content:center;padding:12px}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;align-items:center;justify-content:center}
 .modal-overlay.open{display:flex}
-.modal{background:var(--panel);border:1px solid var(--border2);border-radius:12px;padding:16px;width:100%;max-width:420px;max-height:90vh;overflow-y:auto}
-@media(max-width:480px){.modal{padding:12px;max-width:100%}}
-.modal-title{font-family:var(--mono);font-size:12px;color:var(--blue);margin-bottom:12px}
-@media(max-width:480px){.modal-title{font-size:11px;margin-bottom:10px}}
-.form-field{margin-bottom:8px}
-.form-label{font-size:9px;color:var(--text-dim);margin-bottom:3px;font-family:var(--mono);display:block}
-@media(max-width:480px){.form-label{font-size:8px}}
-.form-input,.form-select{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--text-bright);font-size:11px;padding:6px 8px;font-family:var(--sans);outline:none;transition:border-color .15s}
-@media(max-width:480px){.form-input,.form-select{font-size:10px;padding:5px 6px}}
+.modal{background:var(--panel);border:1px solid var(--border2);border-radius:12px;padding:20px;width:100%;max-width:440px;margin:16px;max-height:90vh;overflow-y:auto}
+.modal-title{font-family:var(--mono);font-size:13px;color:var(--blue);margin-bottom:14px}
+.form-field{margin-bottom:10px}
+.form-label{font-size:10px;color:var(--text-dim);margin-bottom:4px;font-family:var(--mono);display:block}
+.form-input,.form-select{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--text-bright);font-size:12px;padding:7px 9px;font-family:var(--sans);outline:none;transition:border-color .15s}
 .form-input:focus,.form-select:focus{border-color:var(--blue)}
 .form-select option{background:var(--bg2)}
-.modal-actions{display:flex;gap:6px;margin-top:12px}
-.btn-cancel{flex:1;padding:7px;border:1px solid var(--border);background:none;border-radius:6px;color:var(--text-dim);font-size:11px;cursor:pointer;font-family:var(--sans)}
-@media(max-width:480px){.btn-cancel{padding:6px;font-size:10px}}
-.btn-confirm{flex:1;padding:7px;border:1px solid var(--border2);background:var(--blue-dim);border-radius:6px;color:var(--blue);font-size:11px;cursor:pointer;font-family:var(--sans)}
-@media(max-width:480px){.btn-confirm{padding:6px;font-size:10px}}
-.subtask-input-row{display:flex;gap:5px;margin-bottom:5px}
-.subtask-input-row input{flex:1;font-size:11px;background:var(--bg2);border:1px solid var(--border);padding:5px;border-radius:4px;color:var(--text)}
-@media(max-width:480px){.subtask-input-row input{font-size:10px;padding:4px}}
-.subtask-input-row button{background:var(--blue-dim);border:1px solid var(--border2);border-radius:4px;color:var(--blue);font-size:10px;padding:3px 6px;cursor:pointer;white-space:nowrap}
-@media(max-width:480px){.subtask-input-row button{font-size:9px;padding:2px 5px}}
-.subtask-preview{display:flex;flex-direction:column;gap:2px;max-height:70px;overflow-y:auto}
-.subtask-preview-item{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:var(--text);padding:2px 5px;background:var(--bg3);border-radius:3px}
-@media(max-width:480px){.subtask-preview-item{font-size:9px;padding:1px 4px}}
-.subtask-preview-item button{background:none;border:none;color:var(--red);cursor:pointer;font-size:11px}
+.modal-actions{display:flex;gap:7px;margin-top:14px}
+.btn-cancel{flex:1;padding:8px;border:1px solid var(--border);background:none;border-radius:6px;color:var(--text-dim);font-size:12px;cursor:pointer;font-family:var(--sans)}
+.btn-confirm{flex:1;padding:8px;border:1px solid var(--border2);background:var(--blue-dim);border-radius:6px;color:var(--blue);font-size:12px;cursor:pointer;font-family:var(--sans)}
+.subtask-input-row{display:flex;gap:6px;margin-bottom:6px}
+.subtask-input-row input{flex:1}
+.subtask-input-row button{background:var(--blue-dim);border:1px solid var(--border2);border-radius:4px;color:var(--blue);font-size:11px;padding:4px 8px;cursor:pointer;white-space:nowrap}
+.subtask-preview{display:flex;flex-direction:column;gap:3px;max-height:80px;overflow-y:auto}
+.subtask-preview-item{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text);padding:2px 6px;background:var(--bg3);border-radius:3px}
+.subtask-preview-item button{background:none;border:none;color:var(--red);cursor:pointer;font-size:12px}
 
 /* Notification */
-.notif{position:fixed;top:12px;right:12px;z-index:999;display:flex;flex-direction:column;gap:5px;pointer-events:none;max-width:280px}
-@media(max-width:480px){.notif{top:10px;right:10px;max-width:calc(100vw-20px)}}
-.notif-item{background:var(--panel);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;font-family:var(--mono);font-size:11px;color:var(--text-bright);animation:slideIn .3s ease;border-left:3px solid}
-@media(max-width:480px){.notif-item{font-size:10px;padding:8px 10px}}
+.notif{position:fixed;top:16px;right:16px;z-index:999;display:flex;flex-direction:column;gap:6px;pointer-events:none;max-width:280px}
+.notif-item{background:var(--panel);border:1px solid var(--border2);border-radius:8px;padding:10px 14px;font-family:var(--mono);font-size:12px;color:var(--text-bright);animation:slideIn .3s ease;border-left:3px solid}
 @keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
 
-.empty-state{text-align:center;padding:24px;color:var(--text-dim);font-family:var(--mono);font-size:11px}
-@media(max-width:480px){.empty-state{padding:16px;font-size:10px}}
-.scan-line{font-family:var(--mono);font-size:8px;color:var(--text-dim);text-align:center;margin-top:16px;letter-spacing:2px}
-@media(max-width:480px){.scan-line{margin-top:12px;font-size:7px}}
-.export-row{display:flex;gap:5px;flex-wrap:wrap}
+.empty-state{text-align:center;padding:32px;color:var(--text-dim);font-family:var(--mono);font-size:12px}
+.scan-line{font-family:var(--mono);font-size:9px;color:var(--text-dim);text-align:center;margin-top:20px;letter-spacing:2px}
+.export-row{display:flex;gap:6px;flex-wrap:wrap}
 
 /* FOOTER NAV */
-body{display:flex;flex-direction:column}
-.app{flex:1}
-.footer-nav{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--border);padding:0;display:flex;gap:0;z-index:100;height:auto;align-items:stretch}
-.footer-nav .nav-btn{flex:1;border-radius:0;border:none;padding:10px 4px;font-size:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:transparent;border-right:1px solid var(--border);color:var(--text-dim);transition:all .15s;min-height:64px;line-height:1.1}
-@media(max-width:480px){.footer-nav .nav-btn{font-size:9px;gap:2px;min-height:58px;padding:8px 2px}}
-.footer-nav .nav-btn i{font-size:20px;display:block}
-@media(max-width:480px){.footer-nav .nav-btn i{font-size:18px}}
+body{display:flex;flex-direction:column;min-height:100vh}
+.app{flex:1;padding-bottom:70px}
+@media(max-width:480px){.app{padding-bottom:64px}}
+.footer-nav{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--border);z-index:100;display:flex}
+.footer-nav .nav-btn{flex:1;padding:8px 4px;min-height:60px;border:none;background:transparent;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--text-dim);font-size:9px;font-family:var(--sans);cursor:pointer;transition:all .15s}
+@media(max-width:480px){.footer-nav .nav-btn{min-height:56px;font-size:8px;gap:2px;padding:6px 2px}}
+.footer-nav .nav-btn i{font-size:18px}
 .footer-nav .nav-btn:last-child{border-right:none}
 .footer-nav .nav-btn:hover{background:var(--bg3);color:var(--text)}
 .footer-nav .nav-btn.active{background:var(--blue-dim);color:var(--blue);border-bottom:3px solid var(--blue)}
-.main-content{padding-bottom:70px}
-@media(max-width:480px){.main-content{padding-bottom:66px}}
 
 /* HEATMAP */
-.heatmap-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px}
-@media(max-width:480px){.heatmap-card{padding:10px}}
-.heatmap-title{font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-bottom:10px;letter-spacing:1px}
-.heatmap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(16px,1fr));gap:3px;margin-bottom:8px}
-@media(max-width:480px){.heatmap-grid{gap:2px;grid-template-columns:repeat(auto-fill,minmax(14px,1fr))}}
-.heatmap-cell{width:16px;height:16px;border-radius:3px;cursor:pointer;border:1px solid var(--border);transition:all .2s}
-@media(max-width:480px){.heatmap-cell{width:14px;height:14px}}
-.heatmap-cell:hover{transform:scale(1.15);border-color:var(--blue)}
+.heatmap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(14px,1fr));gap:2px;margin-top:8px}
+.heatmap-cell{width:14px;height:14px;border-radius:2px;cursor:pointer;border:1px solid var(--border);transition:all .2s}
+.heatmap-cell:hover{transform:scale(1.2);border-color:var(--blue)}
 .heatmap-cell.level0{background:var(--bg3)}
-.heatmap-cell.level1{background:rgba(63,214,138,0.2);border-color:rgba(63,214,138,0.4)}
-.heatmap-cell.level2{background:rgba(63,214,138,0.4);border-color:rgba(63,214,138,0.6)}
-.heatmap-cell.level3{background:rgba(63,214,138,0.6);border-color:var(--green)}
-.heatmap-cell.level4{background:var(--green);border-color:var(--green)}
-.heatmap-legend{display:flex;align-items:center;gap:8px;font-size:9px;color:var(--text-dim);font-family:var(--mono);justify-content:center;margin-top:6px}
-@media(max-width:480px){.heatmap-legend{gap:5px;font-size:8px}}
-.heatmap-legend-item{display:flex;align-items:center;gap:3px}
-.heatmap-legend-cell{width:12px;height:12px;border-radius:2px}
-@media(max-width:480px){.heatmap-legend-cell{width:10px;height:10px}}
+.heatmap-cell.level1{background:rgba(63,214,138,0.2)}
+.heatmap-cell.level2{background:rgba(63,214,138,0.4)}
+.heatmap-cell.level3{background:rgba(63,214,138,0.6)}
+.heatmap-cell.level4{background:var(--green)}
+.heatmap-legend{display:flex;align-items:center;gap:6px;font-size:8px;color:var(--text-dim);font-family:var(--mono);margin-top:6px;justify-content:center}
+.heatmap-legend span{display:inline}
+.heatmap-legend-item{display:inline-flex;align-items:center;gap:3px}
+.heatmap-legend-cell{width:10px;height:10px;border-radius:1px}
 </style>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/tabler-icons.min.css">
 
 <div class="notif" id="notif-container"></div>
 
 <div class="app">
-  <div class="main-content">
-    <div class="sys-header">
-      <div class="sys-tag">▸ system v2.0 online ◂</div>
-      <div class="sys-title">ARISE <span>SYSTEM</span></div>
-    </div>
+  <div class="sys-header">
+    <div class="sys-tag">▸ system v2.0 online ◂</div>
+    <div class="sys-title">ARISE <span>SYSTEM</span></div>
+  </div>
 
   <!-- STATUS -->
   <div id="tab-status" class="panel active">
@@ -349,7 +241,7 @@ body{display:flex;flex-direction:column}
             <div class="xp-bar-wrap"><div class="xp-bar" id="xp-bar" style="width:0%"></div></div>
             <div class="xp-label" id="xp-label">0/100</div>
           </div>
-          <div style="font-family:var(--mono);font-size:9px;color:var(--text-dim);margin-top:3px" id="total-xp-display"></div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:4px" id="total-xp-display"></div>
         </div>
       </div>
 
@@ -360,29 +252,27 @@ body{display:flex;flex-direction:column}
       </div>
 
       <div class="rank-card">
-        <div style="font-family:var(--mono);font-size:9px;color:var(--text-dim);margin-bottom:3px">HUNTER RANK</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-bottom:4px">HUNTER RANK</div>
         <div class="big-rank" id="big-rank">E</div>
-        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)" id="rank-label-big">Iron Hunter</div>
+        <div style="font-family:var(--mono);font-size:11px;color:var(--text-dim)" id="rank-label-big">Iron Hunter</div>
         <div class="rank-ladder" id="rank-ladder"></div>
         <div class="rank-next-xp" id="rank-next-xp"></div>
       </div>
 
       <div class="radar-card">
         <div class="stat-card-title">▸ STAT RADAR</div>
-        <canvas id="radar-canvas" width="200" height="180" style="display:block;margin:0 auto;max-width:100%;height:auto"></canvas>
+        <canvas id="radar-canvas" width="200" height="180" style="display:block;margin:0 auto"></canvas>
       </div>
     </div>
 
-    <div class="heatmap-card" style="margin-top:10px">
-      <div class="heatmap-title">▸ DAILY STREAK HEATMAP</div>
+    <div class="weekly-card" style="margin-top:12px">
+      <div class="section-title">▸ DAILY STREAK HEATMAP</div>
       <div class="heatmap-grid" id="heatmap-grid"></div>
       <div class="heatmap-legend">
         <span>Less</span>
-        <div class="heatmap-legend-item"><div class="heatmap-legend-cell level0"></div></div>
-        <div class="heatmap-legend-item"><div class="heatmap-legend-cell level1"></div></div>
-        <div class="heatmap-legend-item"><div class="heatmap-legend-cell level2"></div></div>
-        <div class="heatmap-legend-item"><div class="heatmap-legend-cell level3"></div></div>
-        <div class="heatmap-legend-item"><div class="heatmap-legend-cell level4"></div></div>
+        <div class="heatmap-legend-item"><div class="heatmap-legend-cell level0" style="background:var(--bg3)"></div></div>
+        <div class="heatmap-legend-item"><div class="heatmap-legend-cell level2" style="background:rgba(63,214,138,0.4)"></div></div>
+        <div class="heatmap-legend-item"><div class="heatmap-legend-cell level4" style="background:var(--green)"></div></div>
         <span>More</span>
       </div>
     </div>
@@ -411,7 +301,7 @@ body{display:flex;flex-direction:column}
 
   <!-- ACHIEVEMENTS -->
   <div id="tab-achieve" class="panel">
-    <div class="row-between"><div class="section-title">▸ ACHIEVEMENTS</div><div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)" id="ach-count"></div></div>
+    <div class="row-between"><div class="section-title">▸ ACHIEVEMENTS</div><div style="font-family:var(--mono);font-size:11px;color:var(--text-dim)" id="ach-count"></div></div>
     <div class="ach-grid" id="ach-grid"></div>
   </div>
 
@@ -426,27 +316,28 @@ body{display:flex;flex-direction:column}
 
   <!-- DATA/SETTINGS -->
   <div id="tab-settings" class="panel">
-    <div class="section-title" style="margin-bottom:12px">▸ DATA MANAGEMENT</div>
-    <div style="display:flex;flex-direction:column;gap:8px">
-      <div style="background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:12px">
-        <div style="font-size:11px;color:var(--text-bright);margin-bottom:5px">Export Save</div>
-        <div style="font-size:10px;color:var(--text-dim);margin-bottom:8px;font-family:var(--mono)">Download all your data as a JSON backup file.</div>
+    <div class="section-title" style="margin-bottom:14px">▸ DATA MANAGEMENT</div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:14px">
+        <div style="font-size:12px;color:var(--text-bright);margin-bottom:6px">Export Save</div>
+        <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;font-family:var(--mono)">Download all your data as a JSON backup file.</div>
         <button class="btn-primary" onclick="exportData()"><i class="ti ti-download"></i> Export JSON</button>
       </div>
-      <div style="background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:12px">
-        <div style="font-size:11px;color:var(--text-bright);margin-bottom:5px">Import Save</div>
-        <div style="font-size:10px;color:var(--text-dim);margin-bottom:8px;font-family:var(--mono)">Restore a previously exported save file.</div>
-        <input type="file" id="import-file" accept=".json" onchange="importData(event)" style="display:none">
+      <div style="background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:14px">
+        <div style="font-size:12px;color:var(--text-bright);margin-bottom:6px">Import Save</div>
+        <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;font-family:var(--mono)">Restore data from a previously exported JSON file.</div>
+        <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(event)">
         <button class="btn-primary" onclick="document.getElementById('import-file').click()"><i class="ti ti-upload"></i> Import JSON</button>
       </div>
-      <div style="background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:12px">
-        <div style="font-size:11px;color:var(--text-bright);margin-bottom:5px">Reset All Progress</div>
-        <div style="font-size:10px;color:var(--text-dim);margin-bottom:8px;font-family:var(--mono)">Erase all data and start fresh. This cannot be undone.</div>
-        <button class="btn-primary" style="border-color:#e85555;color:#e85555" onclick="resetAll()"><i class="ti ti-alert-triangle"></i> Reset</button>
+      <div style="background:var(--panel);border:1px solid rgba(232,85,85,.3);border-radius:8px;padding:14px">
+        <div style="font-size:12px;color:var(--red);margin-bottom:6px">Reset All Data</div>
+        <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;font-family:var(--mono)">Permanently delete all progress. Cannot be undone.</div>
+        <button class="btn-primary" style="border-color:rgba(232,85,85,.5);background:rgba(232,85,85,.15);color:var(--red)" onclick="resetAll()"><i class="ti ti-trash"></i> Reset</button>
       </div>
     </div>
-    <div class="scan-line">[ all systems operational ]</div>
   </div>
+
+  <div class="scan-line">◈ ARISE SYSTEM v2.0 ◈ ENHANCED HUNTER INTERFACE ◈</div>
 </div>
 
 <div class="footer-nav">
@@ -458,258 +349,291 @@ body{display:flex;flex-direction:column}
   <button class="nav-btn" onclick="showTab('settings',this)"><i class="ti ti-settings"></i><span>Data</span></button>
 </div>
 
-<!-- MODALS -->
-<div class="modal-overlay" id="modal-quest">
+<!-- Quest Modal -->
+<div class="modal-overlay" id="quest-modal">
   <div class="modal">
-    <div class="modal-title">▸ CREATE QUEST</div>
-    <div class="form-field">
-      <label class="form-label">Quest Name</label>
-      <input class="form-input" type="text" id="quest-name" placeholder="What is your goal?">
+    <div class="modal-title">▸ NEW QUEST</div>
+    <div class="form-field"><label class="form-label">Quest Name</label><input class="form-input" id="q-name" placeholder="e.g. Run 5km without stopping"/></div>
+    <div class="form-field"><label class="form-label">Category</label>
+      <select class="form-select" id="q-cat">
+        <option value="fitness">Fitness & Health</option>
+        <option value="habits">Habits & Daily Tasks</option>
+        <option value="social">Social & Relationships</option>
+        <option value="study">Study & Skills</option>
+        <option value="work">Work & Career</option>
+      </select>
     </div>
-    <div class="form-field">
-      <label class="form-label">Category</label>
-      <select class="form-select" id="quest-cat">
-        <option value="dailies">Dailies</option>
-        <option value="goals">Goals</option>
-        <option value="habit">Habit</option>
+    <div class="form-field"><label class="form-label">Difficulty</label>
+      <select class="form-select" id="q-diff">
+        <option value="F">F — Trivial (5 XP)</option>
+        <option value="E" selected>E — Easy (15 XP)</option>
+        <option value="D">D — Normal (30 XP)</option>
+        <option value="C">C — Hard (60 XP)</option>
+        <option value="B">B — Very Hard (100 XP)</option>
+        <option value="A">A — Elite (200 XP)</option>
+        <option value="S">S — Legendary (500 XP)</option>
+      </select>
+    </div>
+    <div class="form-field"><label class="form-label">Stat Rewarded</label>
+      <select class="form-select" id="q-stat">
+        <option value="STR">STR — Strength</option>
+        <option value="AGI">AGI — Agility</option>
+        <option value="INT">INT — Intelligence</option>
+        <option value="CHA">CHA — Charisma</option>
+        <option value="VIT">VIT — Vitality</option>
+        <option value="SEN">SEN — Sense</option>
+      </select>
+    </div>
+    <div class="form-field"><label class="form-label">Type</label>
+      <select class="form-select" id="q-type">
+        <option value="once">One-time quest</option>
+        <option value="daily">Daily (resets midnight)</option>
+        <option value="weekly">Weekly</option>
+      </select>
+    </div>
+    <div class="form-field"><label class="form-label">Due Date (optional)</label><input class="form-input" id="q-due" type="date"/></div>
+    <div class="form-field"><label class="form-label">Penalty for failure</label>
+      <select class="form-select" id="q-penalty">
+        <option value="0">No penalty</option>
+        <option value="5">Lose 5 XP</option>
+        <option value="15">Lose 15 XP</option>
+        <option value="30">Lose 30 XP</option>
       </select>
     </div>
     <div class="form-field">
-      <label class="form-label">XP Reward</label>
-      <input class="form-input" type="number" id="quest-xp" value="50" min="10" max="500">
-    </div>
-    <div class="form-field">
-      <label class="form-label">Stat Bonus (optional)</label>
-      <select class="form-select" id="quest-stat">
-        <option value="">None</option>
-        <option value="STR">Strength</option>
-        <option value="DEX">Dexterity</option>
-        <option value="CON">Constitution</option>
-        <option value="INT">Intelligence</option>
-        <option value="WIS">Wisdom</option>
-        <option value="CHA">Charisma</option>
-      </select>
-    </div>
-    <div class="form-field">
-      <label class="form-label">Difficulty</label>
-      <select class="form-select" id="quest-diff">
-        <option value="E">E - Trivial</option>
-        <option value="D" selected>D - Easy</option>
-        <option value="C">C - Normal</option>
-        <option value="B">B - Hard</option>
-        <option value="A">A - Very Hard</option>
-        <option value="S">S - Extreme</option>
-      </select>
-    </div>
-    <div class="form-field">
-      <label class="form-label">Subtasks (enter each, click Add)</label>
+      <label class="form-label">Sub-tasks (optional)</label>
       <div class="subtask-input-row">
-        <input type="text" id="subtask-input" placeholder="Task detail...">
-        <button onclick="addSubtaskPreview()">Add</button>
+        <input class="form-input" id="st-input" placeholder="Add sub-task..."/>
+        <button onclick="addSubtaskToForm()">+ Add</button>
       </div>
-      <div class="subtask-preview" id="subtask-preview"></div>
-    </div>
-    <div class="form-field">
-      <label class="form-label">Due Date (optional)</label>
-      <input class="form-input" type="date" id="quest-due">
-    </div>
-    <div class="form-field">
-      <label style="display:flex;align-items:center;gap:6px;cursor:pointer">
-        <input type="checkbox" id="quest-recurring" style="width:14px;height:14px">
-        <span style="font-size:10px;color:var(--text-dim);font-family:var(--mono)">Recurring Daily</span>
-      </label>
+      <div class="subtask-preview" id="st-preview"></div>
     </div>
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closeQuestModal()">Cancel</button>
-      <button class="btn-confirm" onclick="saveQuest()">Create</button>
+      <button class="btn-confirm" onclick="addQuest()">Add Quest</button>
     </div>
   </div>
 </div>
 
-<div class="modal-overlay" id="modal-skill">
+<!-- Skill Modal -->
+<div class="modal-overlay" id="skill-modal">
   <div class="modal">
-    <div class="modal-title">▸ LEARN SKILL</div>
-    <div class="form-field">
-      <label class="form-label">Skill Name</label>
-      <input class="form-input" type="text" id="skill-name" placeholder="e.g., Meditation, Programming">
-    </div>
-    <div class="form-field">
-      <label class="form-label">Category</label>
-      <select class="form-select" id="skill-cat">
-        <option value="combat">Combat</option>
-        <option value="craft">Craft</option>
-        <option value="magic">Magic</option>
-        <option value="social">Social</option>
+    <div class="modal-title">▸ NEW SKILL</div>
+    <div class="form-field"><label class="form-label">Skill Name</label><input class="form-input" id="sk-name" placeholder="e.g. Python Programming"/></div>
+    <div class="form-field"><label class="form-label">Category</label>
+      <select class="form-select" id="sk-cat">
+        <option value="fitness">Fitness & Health</option>
+        <option value="habits">Habits & Daily Tasks</option>
+        <option value="social">Social & Relationships</option>
+        <option value="study">Study & Skills</option>
+        <option value="work">Work & Career</option>
       </select>
     </div>
-    <div class="form-field">
-      <label class="form-label">Primary Stat</label>
-      <select class="form-select" id="skill-stat">
-        <option value="STR">Strength</option>
-        <option value="DEX">Dexterity</option>
-        <option value="CON">Constitution</option>
-        <option value="INT">Intelligence</option>
-        <option value="WIS">Wisdom</option>
-        <option value="CHA">Charisma</option>
+    <div class="form-field"><label class="form-label">Linked Stat</label>
+      <select class="form-select" id="sk-stat">
+        <option value="STR">STR</option><option value="AGI">AGI</option>
+        <option value="INT">INT</option><option value="CHA">CHA</option>
+        <option value="VIT">VIT</option><option value="SEN">SEN</option>
       </select>
     </div>
-    <div class="form-field">
-      <label class="form-label">Prerequisite Skill (optional)</label>
-      <select class="form-select" id="skill-prereq">
-        <option value="">None</option>
-        <div id="prereq-options"></div>
-      </select>
+    <div class="form-field"><label class="form-label">Prerequisite (optional — another skill must be LV 5+)</label>
+      <select class="form-select" id="sk-prereq"><option value="">None</option></select>
     </div>
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closeSkillModal()">Cancel</button>
-      <button class="btn-confirm" onclick="saveSkill()">Learn</button>
-    </div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-name">
-  <div class="modal">
-    <div class="modal-title">▸ EDIT HUNTER NAME</div>
-    <div class="form-field">
-      <label class="form-label">Your Name</label>
-      <input class="form-input" type="text" id="name-input" placeholder="Enter your hunter name">
-    </div>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeNameModal()">Cancel</button>
-      <button class="btn-confirm" onclick="saveName()">Save</button>
+      <button class="btn-confirm" onclick="addSkill()">Add Skill</button>
     </div>
   </div>
 </div>
 
 <script>
-// Tabler icons loaded from CDN
-
-const TODAY=()=>new Date().toISOString().split('T')[0];
-const QUESTS_PER_DAY=3;
-const STAT_LIMIT=100;
-const RANKS=['E','D','C','B','A','S'];
-const RANK_NAMES={E:'Iron Hunter',D:'Bronze Hunter',C:'Silver Hunter',B:'Gold Hunter',A:'Platinum Hunter',S:'Shadow Beast'};
-const RANK_XP=[500,1500,3500,7000,14000,25000];
-
-const CAT={combat:{icon:'ti-sword',label:'Combat',color:'#e85555'},craft:{icon:'ti-hammer',label:'Craft',color:'#f5b731'},magic:{icon:'ti-wand',label:'Magic',color:'#9f7aea'},social:{icon:'ti-users',label:'Social',color:'#3fd68a'}};
-
-const ACHIEVEMENTS=[{id:'first_quest',name:'First Step',desc:'Complete your first quest.',icon:'👣',color:'#3b9eff',check:s=>s.questsDone>0},{id:'collector',name:'Collector',desc:'Unlock 5 achievements.',icon:'📚',color:'#f5b731',check:s=>s.achievements.length>=5},{id:'level_10',name:'Ascension',desc:'Reach level 10.',icon:'⬆️',color:'#3fd68a',check:s=>s.level>=10},{id:'master_stats',name:'Balanced',desc:'Get all stats to 50+.',icon:'⚔️',color:'#ff7c5c',check:s=>Object.values(s.stats).every(v=>v>=50)},{id:'skills_10',name:'Versatile',desc:'Learn 10 skills.',icon:'📖',color:'#9f7aea',check:s=>s.skills.length>=10},{id:'streak_7',name:'Consistent',desc:'Maintain 7-day streak.',icon:'🔥',color:'#ff7c5c',check:s=>s.streak>=7},{id:'rank_s',name:'Apex',desc:'Reach S-rank.',icon:'👑',color:'#f5b731',check:s=>getRank(s.totalXP).rank==='S'},{id:'1000_xp',name:'Milestone',desc:'Earn 1000 XP.',icon:'💎',color:'#3b9eff',check:s=>s.totalXP>=1000}];
-
-let state={
-  name:'Hunter',level:1,totalXP:0,xpThreshold:100,stats:{STR:10,DEX:10,CON:10,INT:10,WIS:10,CHA:10},
-  statPoints:0,quests:[],questsDone:0,skills:[],achievements:[],log:[],
-  streak:0,lastActive:TODAY(),weekActivity:[0,0,0,0,0,0,0],
-  titles:[],activeTitle:'',avatar:'S'
+const RANKS=[
+  {rank:'E',label:'Iron Hunter',xp:0,color:'#888'},
+  {rank:'D',label:'Bronze Hunter',xp:500,color:'#c87533'},
+  {rank:'C',label:'Silver Hunter',xp:1500,color:'#a8b8c8'},
+  {rank:'B',label:'Gold Hunter',xp:3500,color:'#f5b731'},
+  {rank:'A',label:'Elite Hunter',xp:7000,color:'#3b9eff'},
+  {rank:'S',label:'Shadow Hunter',xp:15000,color:'#9f7aea'},
+];
+const DIFF={F:{xp:5,color:'#5a7a9a'},E:{xp:15,color:'#3fd68a'},D:{xp:30,color:'#f5b731'},C:{xp:60,color:'#3b9eff'},B:{xp:100,color:'#e85555'},A:{xp:200,color:'#9f7aea'},S:{xp:500,color:'#ff7c5c'}};
+const CAT={
+  fitness:{label:'FITNESS',color:'#e85555',bg:'rgba(232,85,85,.12)',icon:'ti-run'},
+  habits:{label:'HABITS',color:'#3fd68a',bg:'rgba(63,214,138,.12)',icon:'ti-repeat'},
+  social:{label:'SOCIAL',color:'#f5b731',bg:'rgba(245,183,49,.12)',icon:'ti-users'},
+  study:{label:'STUDY',color:'#9f7aea',bg:'rgba(159,122,234,.12)',icon:'ti-book'},
+  work:{label:'WORK',color:'#3b9eff',bg:'rgba(59,158,255,.12)',icon:'ti-briefcase'},
 };
+const STAT_DEF=[
+  {k:'STR',color:'#e85555'},{k:'AGI',color:'#3fd68a'},{k:'INT',color:'#9f7aea'},
+  {k:'CHA',color:'#f5b731'},{k:'VIT',color:'#3b9eff'},{k:'SEN',color:'#e07aff'},
+];
+const ACHIEVEMENTS=[
+  {id:'first_quest',name:'First Steps',desc:'Complete 1 quest',icon:'⚔️',check:s=>s.log.filter(l=>l.type==='quest').length>=1},
+  {id:'ten_quests',name:'Veteran',desc:'Complete 10 quests',icon:'🏅',check:s=>s.log.filter(l=>l.type==='quest').length>=10},
+  {id:'fifty_quests',name:'Champion',desc:'Complete 50 quests',icon:'🏆',check:s=>s.log.filter(l=>l.type==='quest').length>=50},
+  {id:'streak7',name:'Iron Will',desc:'7-day streak',icon:'🔥',check:s=>s.streak>=7},
+  {id:'streak30',name:'Insomniac Hunter',desc:'30-day streak',icon:'💀',check:s=>s.streak>=30},
+  {id:'rank_d',name:'Rising Star',desc:'Reach rank D',icon:'⭐',check:s=>s.totalXP>=500},
+  {id:'rank_b',name:'Gold Tier',desc:'Reach rank B',icon:'🌟',check:s=>s.totalXP>=3500},
+  {id:'rank_s',name:'Shadow Monarch',desc:'Reach rank S',icon:'👑',check:s=>s.totalXP>=15000},
+  {id:'stat100',name:'Maxed Out',desc:'Any stat reaches 100',icon:'💪',check:s=>Object.values(s.stats).some(v=>v>=100)},
+  {id:'skill5',name:'Specialist',desc:'Any skill reaches LV 5',icon:'🧠',check:s=>s.skills.some(sk=>sk.level>=5)},
+  {id:'all_cats',name:'Renaissance',desc:'Complete a quest in all 5 categories',icon:'🌈',check:s=>['fitness','habits','social','study','work'].every(c=>s.log.some(l=>l.cat===c&&l.type==='quest'))},
+  {id:'xp1000',name:'Thousand Club',desc:'Earn 1000 total XP',icon:'💎',check:s=>s.totalXP>=1000},
+];
 
-function persist(){localStorage.setItem('arise_v2',JSON.stringify(state));}
-function load(){const s=localStorage.getItem('arise_v2');state=s?JSON.parse(s):state;}
+const TITLES=[
+  {id:'shadow',name:'Shadow Monarch',req:s=>s.totalXP>=15000,color:'#9f7aea'},
+  {id:'iron',name:'Iron Will',req:s=>s.streak>=7,color:'#f5b731'},
+  {id:'scholar',name:'Scholar',req:s=>s.stats.INT>=50,color:'#3b9eff'},
+  {id:'warrior',name:'Warrior',req:s=>s.stats.STR>=50,color:'#e85555'},
+  {id:'hunter',name:'Hunter',req:s=>s.totalXP>=1000,color:'#3fd68a'},
+];
 
-load();
+function load(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch{return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}
 
-function getRank(xp){
-  for(let i=RANKS.length-1;i>=0;i--)
-    if(xp>=RANK_XP[i])return{rank:RANKS[i],idx:i};
-  return{rank:'E',idx:0};
+const TODAY=()=>new Date().toISOString().slice(0,10);
+
+let state=load('arise_v2',{
+  name:'Siddhant',totalXP:0,statPoints:0,streak:0,lastActiveDate:null,
+  stats:{STR:10,AGI:10,INT:10,CHA:10,VIT:10,SEN:10},
+  quests:[
+    {id:1,name:'Morning workout (30 min)',cat:'fitness',diff:'D',stat:'STR',type:'daily',due:null,penalty:0,subtasks:[],done:false,doneDate:null},
+    {id:2,name:'Read 20 pages',cat:'study',diff:'E',stat:'INT',type:'daily',due:null,penalty:0,subtasks:[],done:false,doneDate:null},
+    {id:3,name:'Check in with a friend',cat:'social',diff:'E',stat:'CHA',type:'weekly',due:null,penalty:0,subtasks:[],done:false,doneDate:null},
+  ],
+  skills:[
+    {id:1,name:'Running',cat:'fitness',stat:'STR',level:1,xp:0,lastTrained:null,prereq:''},
+    {id:2,name:'Deep Focus',cat:'study',stat:'INT',level:1,xp:0,lastTrained:null,prereq:''},
+  ],
+  log:[],achievements:[],questFilter:'all',weeklyXP:{},
+});
+
+let _qId=Math.max(0,...state.quests.map(q=>q.id),0)+1;
+let _skId=Math.max(0,...state.skills.map(s=>s.id),0)+1;
+let _formSubs=[];
+
+function persist(){save('arise_v2',state)}
+
+function checkDailyReset(){
+  const today=TODAY();
+  if(state.lastActiveDate===today)return;
+  const yesterday=new Date();yesterday.setDate(yesterday.getDate()-1);
+  const yStr=yesterday.toISOString().slice(0,10);
+  if(state.lastActiveDate===yStr){state.streak++;addLog(`Day ${state.streak} streak maintained!`,'system',null,'#f5b731')}
+  else if(state.lastActiveDate&&state.lastActiveDate!==today){
+    if(state.streak>0){
+      const pen=state.quests.filter(q=>q.type==='daily'&&!q.done).reduce((a,q)=>a+parseInt(q.penalty||0),0);
+      if(pen>0){state.totalXP=Math.max(0,state.totalXP-pen);addLog(`Missed daily quests — lost ${pen} XP`,'penalty',null,'#e85555')}
+      addLog(`Streak broken. Reset to 0.`,'system',null,'#e85555');
+    }
+    state.streak=0;
+  }
+  state.quests.forEach(q=>{
+    if(q.type==='daily'&&q.doneDate!==today){q.done=false;q.subtasks.forEach(st=>st.done=false)}
+    if(q.type==='weekly'){
+      const wd=new Date();const monday=new Date(wd);monday.setDate(wd.getDate()-wd.getDay()+1);
+      if(!q.doneDate||new Date(q.doneDate)<monday){q.done=false;q.subtasks.forEach(st=>st.done=false)}
+    }
+  });
+  state.lastActiveDate=today;
+  persist();
 }
 
-function addQuestXP(xp){
-  state.totalXP+=xp;state.xpThreshold=getRank(state.totalXP).idx*5000+500;
-  const needed=state.level*100;
-  state.xp=(state.xp||0)+xp;
-  while(state.xp>=needed){state.xp-=needed;state.level++;state.statPoints+=3;addLog(`Level up! → LV ${state.level}`,'level',null,'#f5b731');notify(`⬆ LEVEL ${state.level}!`,'#f5b731');checkAchievements();}
+function getStreak(){return state.streak}
+function getMultiplier(streak){if(streak>=30)return 3;if(streak>=7)return 2;if(streak>=3)return 1.5;return 1}
+function getRank(xp){let r=RANKS[0];for(const rk of RANKS){if(xp>=rk.xp)r=rk;}return r}
+function getLevel(xp){let lv=1,rem=xp;while(true){const need=lv*100;if(rem<need)return{level:lv,remaining:rem,needed:need};rem-=need;lv++}}
+function getActiveTitle(){for(const t of TITLES){if(t.req(state))return t;}return null}
+
+function notify(msg,color='#3b9eff'){
+  const c=document.getElementById('notif-container');
+  const el=document.createElement('div');
+  el.className='notif-item';el.style.borderLeftColor=color;el.textContent=msg;
+  c.appendChild(el);setTimeout(()=>el.remove(),3500);
 }
 
 function renderStatus(){
-  document.getElementById('player-name-el').textContent=state.name;
-  document.getElementById('avatar-init').textContent=state.avatar;
   const rank=getRank(state.totalXP);
-  document.getElementById('rank-badge').textContent=rank.rank;
+  const{level,remaining,needed}=getLevel(state.totalXP);
+  const streak=state.streak;
+  const mult=getMultiplier(streak);
+  const title=getActiveTitle();
+
+  document.getElementById('avatar-init').textContent=state.name.charAt(0).toUpperCase();
+  document.getElementById('player-name-el').textContent=state.name;
+  document.getElementById('level-num').textContent=level;
+  document.getElementById('xp-bar').style.width=Math.round((remaining/needed)*100)+'%';
+  document.getElementById('xp-label').textContent=remaining+'/'+needed;
+  document.getElementById('total-xp-display').textContent='Total XP: '+state.totalXP;
+  document.getElementById('streak-num').textContent=streak;
+  document.getElementById('multiplier-el').textContent=mult>1?mult+'x XP':'';
+
+  const badge=document.getElementById('rank-badge');
+  badge.textContent=rank.rank;badge.style.color=rank.color;badge.style.borderColor=rank.color;badge.style.background=rank.color+'1a';
+
+  const td=document.getElementById('title-display');
+  if(title){td.innerHTML=`<div class="title-badge" style="color:${title.color};border-color:${title.color};background:${title.color}18;display:inline-block;margin-top:4px">${title.name}</div>`}
+  else td.innerHTML='';
+
   document.getElementById('big-rank').textContent=rank.rank;
-  document.getElementById('rank-label-big').textContent=RANK_NAMES[rank.rank];
-  document.getElementById('level-num').textContent=state.level;
-  const needed=state.level*100;
-  const pct=Math.round(((state.xp||0)/needed)*100);
-  document.getElementById('xp-bar').style.width=pct+'%';
-  document.getElementById('xp-label').textContent=`${Math.floor(state.xp||0)}/${needed}`;
-  document.getElementById('total-xp-display').textContent=`Total XP: ${state.totalXP}`;
-  
-  checkDailyReset();
-  const daysOff=Math.floor((Date.now()-new Date(state.lastActive))/(86400000));
-  let mult=1;
-  if(daysOff===0){state.streak++;mult=1+state.streak*0.1;}
-  else if(daysOff===1){state.streak+=1;mult=1+state.streak*0.1;}
-  else{state.streak=0;mult=1;}
-  
-  document.getElementById('streak-num').textContent=state.streak;
-  document.getElementById('multiplier-el').textContent=mult>1?`x${mult.toFixed(1)}`:state.streak>0?'':mult.toFixed(1);
-  document.getElementById('streak-badge').style.display=state.streak>0?'flex':'none';
-  
-  if(state.activeTitle){
-    const t=state.titles.find(x=>x.id===state.activeTitle);
-    if(t)document.getElementById('title-display').innerHTML=`<div class="title-badge">${t.name}</div>`;
-  }
-  
-  renderStats();renderRank();renderRadar();renderHeatmap();
-}
+  document.getElementById('big-rank').style.color=rank.color;
+  document.getElementById('rank-label-big').textContent=rank.label;
+  document.getElementById('rank-label-big').style.color=rank.color;
 
-function renderStats(){
-  const rows=Object.entries(state.stats).map(([k,v])=>{
-    const lims=Math.min(v,STAT_LIMIT);
-    const pct=Math.round((lims/STAT_LIMIT)*100);
-    return`<div class="stat-row">
-      <div class="stat-name">${k}</div>
-      <div class="stat-bar-wrap"><div class="stat-bar" style="width:${pct}%;background:${['#e85555','#f5b731','#3fd68a','#3b9eff','#9f7aea','#ff7c5c'][Object.keys(state.stats).indexOf(k)]||'#3b9eff'}"></div></div>
-      <div class="stat-val">${lims}</div>
-      <button class="stat-plus" onclick="addStat('${k}')" ${state.statPoints<1?'disabled':''}><i class="ti ti-plus"></i></button>
-    </div>`;
+  const ladder=document.getElementById('rank-ladder');
+  ladder.innerHTML=RANKS.map(r=>{
+    const isCur=r.rank===rank.rank,isDone=state.totalXP>=r.xp;
+    return`<div class="rank-pip ${isCur?'current':isDone?'done':''}" style="${isCur?'border-color:'+r.color+';color:'+r.color:''}">${r.rank}</div>`;
   }).join('');
-  document.getElementById('stat-rows').innerHTML=rows;
-  document.getElementById('stat-pts-display').textContent=`Available: ${state.statPoints} pts`;
+
+  const nextRank=RANKS.find(r=>r.xp>state.totalXP);
+  document.getElementById('rank-next-xp').textContent=nextRank?`${nextRank.xp-state.totalXP} XP to rank ${nextRank.rank}`:'MAX RANK ACHIEVED';
+
+  const rows=document.getElementById('stat-rows');
+  rows.innerHTML=STAT_DEF.map(s=>`
+    <div class="stat-row">
+      <div class="stat-name" style="color:${s.color}">${s.k}</div>
+      <div class="stat-bar-wrap"><div class="stat-bar" style="width:${Math.min(100,state.stats[s.k])}%;background:${s.color}"></div></div>
+      <div class="stat-val">${state.stats[s.k]}</div>
+      ${state.statPoints>0?`<button class="stat-plus" onclick="addStatPoint('${s.k}')">+</button>`:'<div style="width:18px"></div>'}
+    </div>`).join('');
+  document.getElementById('stat-pts-display').textContent=state.statPoints>0?`▸ ${state.statPoints} point${state.statPoints>1?'s':''} to spend`:'';
+
+  drawRadar();
+  renderHeatmap();
 }
 
-function addStat(stat){
-  if(state.statPoints<1||state.stats[stat]>=STAT_LIMIT)return;
-  state.stats[stat]++;state.statPoints--;
-  addLog(`+1 ${stat}`,'stat',null);
-  persist();renderStatus();
-}
-
-function renderRank(){
-  const rank=getRank(state.totalXP);const nextIdx=Math.min(rank.idx+1,5);
-  const nextXp=RANK_XP[nextIdx];const diff=nextXp-state.totalXP;
-  document.getElementById('rank-next-xp').textContent=`Next: ${diff} XP`;
-  const ladder=RANKS.map((r,i)=>`<div class="rank-pip ${i<rank.idx?'done':''}${i===rank.idx?'current':''}">●</div>`).join('');
-  document.getElementById('rank-ladder').innerHTML=ladder;
-}
-
-function renderRadar(){
-  const c=document.getElementById('radar-canvas');if(!c)return;
-  const ctx=c.getContext('2d');const w=c.width;const h=c.height;const cx=w/2;const cy=h/2;
-  ctx.clearRect(0,0,w,h);
-  const labels=['STR','DEX','CON','INT','WIS','CHA'];const vals=labels.map(l=>Math.min(state.stats[l],50)/50);
-  const steps=5;const angleSlice=Math.PI*2/labels.length;
-  ctx.strokeStyle='rgba(59,158,255,0.2)';ctx.fillStyle='rgba(59,158,255,0.05)';
-  for(let i=1;i<=steps;i++){
-    const r=(cy-20)*(i/steps);ctx.beginPath();
-    for(let j=0;j<labels.length;j++){
-      const a=angleSlice*j-Math.PI/2;
-      const x=cx+r*Math.cos(a);const y=cy+r*Math.sin(a);
-      if(j===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
-    }
+function drawRadar(){
+  const canvas=document.getElementById('radar-canvas');
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  const W=canvas.width,H=canvas.height,cx=W/2,cy=H/2,r=72;
+  ctx.clearRect(0,0,W,H);
+  const n=6,labels=['STR','AGI','INT','CHA','VIT','SEN'];
+  const vals=labels.map(l=>state.stats[l]||0);
+  const colors=['#e85555','#3fd68a','#9f7aea','#f5b731','#3b9eff','#e07aff'];
+  const angle=k=>(-Math.PI/2)+(2*Math.PI/n)*k;
+  ctx.strokeStyle='rgba(30,58,95,.8)';ctx.lineWidth=0.5;
+  for(let ring=1;ring<=5;ring++){
+    ctx.beginPath();
+    for(let k=0;k<n;k++){const a=angle(k),fr=ring/5;ctx.lineTo(cx+r*fr*Math.cos(a),cy+r*fr*Math.sin(a));}
     ctx.closePath();ctx.stroke();
   }
-  ctx.strokeStyle='#3b9eff';ctx.fillStyle='rgba(59,158,255,0.2)';ctx.lineWidth=2;ctx.beginPath();
-  for(let i=0;i<labels.length;i++){
-    const a=angleSlice*i-Math.PI/2;const r=(cy-20)*vals[i];
-    const x=cx+r*Math.cos(a);const y=cy+r*Math.sin(a);
-    if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+  for(let k=0;k<n;k++){ctx.beginPath();ctx.moveTo(cx,cy);const a=angle(k);ctx.lineTo(cx+r*Math.cos(a),cy+r*Math.sin(a));ctx.stroke();}
+  ctx.beginPath();
+  for(let k=0;k<n;k++){const a=angle(k),v=Math.min(vals[k],100)/100;ctx.lineTo(cx+r*v*Math.cos(a),cy+r*v*Math.sin(a));}
+  ctx.closePath();ctx.fillStyle='rgba(59,158,255,.15)';ctx.fill();ctx.strokeStyle='#3b9eff';ctx.lineWidth=1.5;ctx.stroke();
+  for(let k=0;k<n;k++){
+    const a=angle(k),v=Math.min(vals[k],100)/100;
+    ctx.beginPath();ctx.arc(cx+r*v*Math.cos(a),cy+r*v*Math.sin(a),3,0,Math.PI*2);
+    ctx.fillStyle=colors[k];ctx.fill();
   }
-  ctx.closePath();ctx.fill();ctx.stroke();
-  ctx.fillStyle='#c8d8f0';ctx.font='10px Share Tech Mono';ctx.textAlign='center';
-  for(let i=0;i<labels.length;i++){
-    const a=angleSlice*i-Math.PI/2;const r=cy-5;const x=cx+r*Math.cos(a);const y=cy+r*Math.sin(a);
-    ctx.fillText(labels[i],x,y+3);
+  ctx.font='10px "Share Tech Mono",monospace';ctx.textAlign='center';ctx.textBaseline='middle';
+  for(let k=0;k<n;k++){
+    const a=angle(k),lx=cx+(r+14)*Math.cos(a),ly=cy+(r+14)*Math.sin(a);
+    ctx.fillStyle=colors[k];ctx.fillText(labels[k],lx,ly);
   }
 }
 
@@ -722,148 +646,155 @@ function renderHeatmap(){
     const key=d.toISOString().split('T')[0];
     const v=state.heatmap[key]||0;
     const lv=v>70?4:v>50?3:v>25?2:v>0?1:0;
-    cells+=`<div class="heatmap-cell level${lv}" title="${key}: ${v} XP" style="background:${lv===0?'var(--bg3)':lv===4?'var(--green)':`rgba(63,214,138,${lv*0.2})`}"></div>`;
+    cells+=`<div class="heatmap-cell level${lv}" title="${key}: ${v} XP"></div>`;
   }
   grid.innerHTML=cells;
 }
 
-function checkDailyReset(){
-  if(state.lastActive!==TODAY()){
-    state.lastActive=TODAY();
-    const recurring=state.quests.filter(q=>q.recurring&&q.done);
-    recurring.forEach(q=>{q.done=false;q.subtasks?.forEach(st=>{st.done=false;});});
-    const msg=`Daily reset. ${recurring.length} recurring quest(s) refreshed.`;
-    addLog(msg,'system',null,'#3b9eff');
-  }
+function addStatPoint(k){
+  if(state.statPoints<=0)return;
+  state.stats[k]=Math.min(100,state.stats[k]+1);state.statPoints--;
+  addLog(`Allocated +1 to ${k}`,'stat',null,'#9f7aea');
+  checkAchievements();persist();renderStatus();
 }
 
-function editName(){
-  document.getElementById('name-input').value=state.name;
-  document.getElementById('modal-name').classList.add('open');
-}
-function saveName(){
-  const v=document.getElementById('name-input').value.trim();if(v){state.name=v;state.avatar=v[0].toUpperCase();persist();renderStatus();closeNameModal();}
-}
-function closeNameModal(){document.getElementById('modal-name').classList.remove('open');}
+function editName(){const n=prompt('Hunter name:',state.name);if(n&&n.trim()){state.name=n.trim();persist();renderStatus();}}
 
-function openQuestModal(){
-  document.getElementById('quest-name').value='';
-  document.getElementById('quest-xp').value='50';
-  document.getElementById('quest-cat').value='dailies';
-  document.getElementById('quest-stat').value='';
-  document.getElementById('quest-diff').value='D';
-  document.getElementById('quest-due').value='';
-  document.getElementById('quest-recurring').checked=false;
-  document.getElementById('subtask-preview').innerHTML='';
-  window.subtaskPreview=[];
-  document.getElementById('modal-quest').classList.add('open');
-}
-function closeQuestModal(){document.getElementById('modal-quest').classList.remove('open');}
+// QUESTS
+let _qFormSubs=[];
+function openQuestModal(){_qFormSubs=[];document.getElementById('q-name').value='';document.getElementById('st-preview').innerHTML='';document.getElementById('quest-modal').classList.add('open');document.getElementById('q-name').focus();}
+function closeQuestModal(){document.getElementById('quest-modal').classList.remove('open');}
 
-function addSubtaskPreview(){
-  const inp=document.getElementById('subtask-input');const v=inp.value.trim();if(!v)return;
-  if(!window.subtaskPreview)window.subtaskPreview=[];
-  window.subtaskPreview.push(v);inp.value='';
-  const html=window.subtaskPreview.map((t,i)=>`<div class="subtask-preview-item">${t}<button onclick="removeSubtaskPreview(${i})">✕</button></div>`).join('');
-  document.getElementById('subtask-preview').innerHTML=html;
+function addSubtaskToForm(){
+  const v=document.getElementById('st-input').value.trim();if(!v)return;
+  _qFormSubs.push({text:v,done:false});
+  document.getElementById('st-input').value='';
+  document.getElementById('st-preview').innerHTML=_qFormSubs.map((s,i)=>`<div class="subtask-preview-item">${s.text}<button onclick="_qFormSubs.splice(${i},1);document.getElementById('st-preview').innerHTML=''">×</button></div>`).join('');
 }
-function removeSubtaskPreview(i){window.subtaskPreview.splice(i,1);const html=window.subtaskPreview.map((t,idx)=>`<div class="subtask-preview-item">${t}<button onclick="removeSubtaskPreview(${idx})">✕</button></div>`).join('');document.getElementById('subtask-preview').innerHTML=html;}
 
-function saveQuest(){
-  const name=document.getElementById('quest-name').value.trim();
-  const xp=parseInt(document.getElementById('quest-xp').value)||50;
-  const cat=document.getElementById('quest-cat').value;
-  const stat=document.getElementById('quest-stat').value||null;
-  const diff=document.getElementById('quest-diff').value;
-  const due=document.getElementById('quest-due').value;
-  const recurring=document.getElementById('quest-recurring').checked;
-  if(!name){notify('Please enter a quest name','#e85555');return;}
-  const subtasks=(window.subtaskPreview||[]).map((t,i)=>({id:i,text:t,done:false}));
-  state.quests.unshift({id:Date.now(),name,xp,cat,stat,diff,due,recurring,done:false,subtasks,created:TODAY()});
-  persist();closeQuestModal();renderQuests();notify(`Quest added: "${name}"`,'#3fd68a');
+function addQuest(){
+  const name=document.getElementById('q-name').value.trim();if(!name)return;
+  const diff=document.getElementById('q-diff').value;
+  const q={id:_qId++,name,cat:document.getElementById('q-cat').value,diff,stat:document.getElementById('q-stat').value,
+    type:document.getElementById('q-type').value,due:document.getElementById('q-due').value||null,
+    penalty:parseInt(document.getElementById('q-penalty').value),
+    subtasks:_qFormSubs.map(s=>({...s})),done:false,doneDate:null};
+  state.quests.push(q);
+  addLog(`Quest registered: "${name}" [${diff}]`,'system',null,'#3b9eff');
+  persist();closeQuestModal();renderQuests();
 }
 
 function renderQuests(){
-  const fil=state.quests.filter(q=>!q.done);
-  const cats=[...new Set(fil.map(q=>q.cat))];
-  const filtersHtml=`<button class="filter-btn active" onclick="filterQuests(null,this)">All (${state.quests.length})</button>`+cats.map(c=>`<button class="filter-btn" onclick="filterQuests('${c}',this)">${c} (${state.quests.filter(q=>q.cat===c).length})</button>`).join('');
-  document.getElementById('quest-filters').innerHTML=filtersHtml;
-  const list=state.quests.map(q=>{
-    const now=new Date();const dueDate=q.due?new Date(q.due):null;const overdue=dueDate&&dueDate<now;
-    const subPct=q.subtasks?.length?Math.round(q.subtasks.filter(s=>s.done).length/q.subtasks.length*100):0;
-    return`<div class="quest-item ${q.done?'done':''}${overdue?' overdue':''}">
+  const filter=state.questFilter;
+  const cats=['all','fitness','habits','social','study','work','done'];
+  document.getElementById('quest-filters').innerHTML=cats.map(c=>`
+    <button class="filter-btn ${filter===c?'active':''}" onclick="setQFilter('${c}')">${c==='all'?'All':c==='done'?'Completed':CAT[c]?.label||c}</button>`).join('');
+  const today=TODAY();
+  let quests=state.quests;
+  if(filter==='done')quests=quests.filter(q=>q.done);
+  else if(filter!=='all')quests=quests.filter(q=>q.cat===filter&&!q.done);
+  else quests=quests.filter(q=>!q.done);
+
+  if(!quests.length){
+    document.getElementById('quest-list').innerHTML=`<div class="empty-state">[ NO QUESTS ]<br><br>${filter==='done'?'Complete quests first.':'All quests done or none added.'}</div>`;
+    return;
+  }
+  document.getElementById('quest-list').innerHTML=quests.map(q=>{
+    const cm=CAT[q.cat],d=DIFF[q.diff]||DIFF.E;
+    const isOverdue=q.due&&!q.done&&q.due<today;
+    const subDone=q.subtasks.filter(s=>s.done).length,subTotal=q.subtasks.length;
+    const subPct=subTotal?Math.round((subDone/subTotal)*100):0;
+    return`<div class="quest-item ${q.done?'done':''} ${isOverdue?'overdue':''}">
       <div class="quest-top">
-        <button class="quest-check ${q.done?'checked':''}" onclick="toggleQuest(${q.id})"><i class="ti ti-check"></i></button>
+        <button class="quest-check ${q.done?'checked':''}" onclick="toggleQuest(${q.id})">${q.done?'<i class="ti ti-check"></i>':''}</button>
         <div class="quest-body">
           <div class="quest-name">${q.name}</div>
           <div class="quest-meta">
-            <span class="quest-cat" style="background:${CAT[q.cat].color}20;color:${CAT[q.cat].color}">${q.cat}</span>
-            <span class="quest-diff" style="color:${{E:'#3b9eff',D:'#3fd68a',C:'#f5b731',B:'#ff7c5c',A:'#e85555',S:'#9f7aea'}[q.diff]||'inherit'}">★${q.diff}</span>
-            <span class="quest-xp">+${q.xp} XP</span>
-            ${q.stat?`<span class="quest-stat">+${q.stat}</span>`:''}
-            ${q.due?`<span class="quest-due ${overdue?'overdue':''}">${overdue?'OVERDUE':'Due: '+q.due}</span>`:''}
-            ${q.recurring?'<span class="recurring-badge">↻ Daily</span>':''}
+            <span class="quest-cat" style="background:${cm.bg};color:${cm.color}">${cm.label}</span>
+            <span class="quest-diff" style="color:${d.color}">[${q.diff}] +${d.xp} XP</span>
+            <span class="quest-stat" style="color:#3b9eff">+1 ${q.stat}</span>
+            ${q.type!=='once'?`<span class="recurring-badge">${q.type}</span>`:''}
+            ${q.penalty>0&&!q.done?`<span class="penalty-badge">-${q.penalty} XP fail</span>`:''}
+            ${isOverdue?`<span class="quest-due overdue">OVERDUE</span>`:q.due?`<span class="quest-due">due ${q.due}</span>`:''}
           </div>
-          ${q.subtasks?.length?`<div class="subtask-list">${q.subtasks.map(s=>`<div class="subtask-row"><button class="subtask-check ${s.done?'checked':''}" onclick="toggleSubtask(${q.id},${s.id})"><i class="ti ti-check"></i></button><span class="subtask-text ${s.done?'done':''}">${s.text}</span></div>`).join('')}</div><div class="subtask-progress"><div class="subtask-progress-fill" style="width:${subPct}%"></div></div>`:''}
+          ${subTotal>0?`<div class="subtask-list">${q.subtasks.map((st,si)=>`
+            <div class="subtask-row">
+              <button class="subtask-check ${st.done?'checked':''}" onclick="toggleSubtask(${q.id},${si})">${st.done?'<i class="ti ti-check"></i>':''}</button>
+              <span class="subtask-text ${st.done?'done':''}">${st.text}</span>
+            </div>`).join('')}
+            <div class="subtask-progress"><div class="subtask-progress-fill" style="width:${subPct}%"></div></div>
+          </div>`:''}
         </div>
-      </div>
-      <div class="quest-actions">
-        <button class="quest-del" onclick="deleteQuest(${q.id})"><i class="ti ti-trash"></i></button>
+        <div class="quest-actions"><button class="quest-del" onclick="deleteQuest(${q.id})"><i class="ti ti-x"></i></button></div>
       </div>
     </div>`;
   }).join('');
-  document.getElementById('quest-list').innerHTML=list||'<div class="empty-state">[ NO QUESTS YET ]</div>';
 }
+
+function setQFilter(f){state.questFilter=f;persist();renderQuests();}
 
 function toggleQuest(id){
   const q=state.quests.find(x=>x.id===id);if(!q)return;
+  const today=TODAY();
   if(!q.done){
-    q.done=true;state.questsDone++;
-    const mult=1+state.streak*0.1;
-    const xp=Math.floor(q.xp*mult);
-    addQuestXP(xp);
-    state.stats[q.stat||'STR']=Math.min(STAT_LIMIT,state.stats[q.stat||'STR']+1);
-    if(!state.heatmap)state.heatmap={};const key=TODAY();state.heatmap[key]=(state.heatmap[key]||0)+xp;
-    addLog(`"${q.name}" completed (+${xp} XP ${mult>1?`x${mult.toFixed(1)}`:''})!`,'quest',xp,CAT[q.cat]?.color||'#3b9eff');
-    notify(`✓ Quest: "${q.name}" (+${xp} XP)`,'#3fd68a');
-    checkAchievements();
-  }else{q.done=false;state.questsDone--;}
-  persist();renderQuests();renderStatus();
+    const mult=getMultiplier(state.streak);
+    const baseXP=DIFF[q.diff]?.xp||15;
+    const earned=Math.round(baseXP*mult);
+    q.done=true;q.doneDate=today;
+    state.totalXP+=earned;
+    state.stats[q.stat]=Math.min(100,(state.stats[q.stat]||10)+1);
+    state.statPoints+=Math.floor(earned/25);
+    if(!state.heatmap)state.heatmap={};state.heatmap[today]=(state.heatmap[today]||0)+earned;
+    addLog(`Completed: "${q.name}"${mult>1?' ('+mult+'x streak bonus)':''}`, 'quest',earned,CAT[q.cat].color,q.cat);
+    if(q.type==='once')state.quests=state.quests.filter(x=>x.id!==id);
+    notify(`✓ ${q.name} — +${earned} XP`,'#3fd68a');
+    checkAchievements();checkRankUp();
+  }else{
+    const baseXP=DIFF[q.diff]?.xp||15;
+    q.done=false;q.doneDate=null;
+    state.totalXP=Math.max(0,state.totalXP-baseXP);
+    state.stats[q.stat]=Math.max(1,(state.stats[q.stat]||10)-1);
+    if(!state.heatmap)state.heatmap={};state.heatmap[today]=Math.max(0,(state.heatmap[today]||0)-baseXP);
+  }
+  persist();renderStatus();renderQuests();renderLog();
 }
 
-function toggleSubtask(qid,sid){
-  const q=state.quests.find(x=>x.id===qid);if(!q)return;
-  const s=q.subtasks.find(x=>x.id===sid);if(!s)return;
-  s.done=!s.done;persist();renderQuests();
+function toggleSubtask(qId,si){
+  const q=state.quests.find(x=>x.id===qId);if(!q||!q.subtasks[si])return;
+  q.subtasks[si].done=!q.subtasks[si].done;
+  persist();renderQuests();
 }
 
 function deleteQuest(id){state.quests=state.quests.filter(q=>q.id!==id);persist();renderQuests();}
-function filterQuests(cat,btn){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');}
 
-function openSkillModal(){
-  document.getElementById('skill-name').value='';
-  document.getElementById('skill-cat').value='combat';
-  document.getElementById('skill-stat').value='STR';
-  document.getElementById('skill-prereq').innerHTML='<option value="">None</option>'+state.skills.map(s=>`<option value="${s.id}">${s.name}</option>`).join('');
-  document.getElementById('modal-skill').classList.add('open');
+function checkRankUp(){
+  const r=getRank(state.totalXP);
+  const prev=state._lastRank;
+  if(r.rank!==prev){state._lastRank=r.rank;addLog(`Rank advanced: ${r.rank} — ${r.label}`,'rank',null,r.color);notify(`⬆ RANK UP: ${r.rank} ${r.label}`,r.color);}
 }
-function closeSkillModal(){document.getElementById('modal-skill').classList.remove('open');}
 
-function saveSkill(){
-  const name=document.getElementById('skill-name').value.trim();
-  const cat=document.getElementById('skill-cat').value;
-  const stat=document.getElementById('skill-stat').value;
-  const prereq=document.getElementById('skill-prereq').value||null;
-  if(!name){notify('Please enter a skill name','#e85555');return;}
-  state.skills.push({id:Date.now(),name,cat,stat,level:1,xp:0,prereq:prereq?parseInt(prereq):null,lastTrained:null});
-  persist();closeSkillModal();renderSkills();notify(`Skill learned: "${name}"`,'#3fd68a');
+// SKILLS
+function openSkillModal(){
+  const sel=document.getElementById('sk-prereq');
+  sel.innerHTML='<option value="">None</option>'+state.skills.map(s=>`<option value="${s.id}">${s.name} (LV ${s.level})</option>`).join('');
+  document.getElementById('sk-name').value='';
+  document.getElementById('skill-modal').classList.add('open');document.getElementById('sk-name').focus();
+}
+function closeSkillModal(){document.getElementById('skill-modal').classList.remove('open');}
+
+function addSkill(){
+  const name=document.getElementById('sk-name').value.trim();if(!name)return;
+  state.skills.push({id:_skId++,name,cat:document.getElementById('sk-cat').value,stat:document.getElementById('sk-stat').value,level:1,xp:0,lastTrained:TODAY(),prereq:document.getElementById('sk-prereq').value});
+  addLog(`Skill registered: "${name}"`,'system',null,'#3b9eff');
+  persist();closeSkillModal();renderSkills();
 }
 
 function renderSkills(){
   const grid=document.getElementById('skills-grid');
-  const cm=CAT;
+  if(!state.skills.length){grid.innerHTML='<div class="empty-state" style="grid-column:1/-1">[ NO SKILLS ]<br><br>Register a skill to begin tracking.</div>';return;}
+  const today=TODAY();
   grid.innerHTML=state.skills.map(s=>{
-    const cat_meta=cm[s.cat];
+    const cm=CAT[s.cat];
     const needed=s.level*50;
     const pct=Math.round((s.xp/needed)*100);
     const prereqSkill=s.prereq?state.skills.find(x=>x.id==s.prereq):null;
@@ -872,15 +803,15 @@ function renderSkills(){
     const daysSince=lastD?Math.floor((Date.now()-lastD)/(86400000)):0;
     const decayPct=Math.max(0,daysSince-3)*5;
     return`<div class="skill-card ${!prereqMet?'skill-locked':''}">
-      <div class="skill-icon"><i class="ti ${cat_meta.icon}" style="color:${cat_meta.color}"></i></div>
+      <div class="skill-icon"><i class="ti ${cm.icon}" style="color:${cm.color}"></i></div>
       <div class="skill-name">${s.name}</div>
-      <div class="skill-area" style="color:${cat_meta.color}">${cat_meta.label} · ${s.stat}</div>
-      <div class="skill-level-bar"><div class="skill-level-fill" style="width:${pct}%;background:${cat_meta.color}"></div></div>
-      <div class="skill-lv" style="color:${cat_meta.color}">LV ${s.level} — ${pct}%</div>
+      <div class="skill-area" style="color:${cm.color}">${cm.label} · ${s.stat}</div>
+      <div class="skill-level-bar"><div class="skill-level-fill" style="width:${pct}%;background:${cm.color}"></div></div>
+      <div class="skill-lv" style="color:${cm.color}">LV ${s.level} — ${pct}%</div>
       ${decayPct>0?`<div class="skill-decay">⚠ decay risk: ${decayPct}%</div>`:''}
       ${!prereqMet?`<div class="skill-req-badge">Req: ${prereqSkill.name} LV 5</div>`:''}
       <div class="skill-btns">
-        <button class="skill-btn" onclick="trainSkill(${s.id})" style="border-color:${cat_meta.color};color:${cat_meta.color}" ${!prereqMet?'disabled':''}>Train</button>
+        <button class="skill-btn" onclick="trainSkill(${s.id})" style="border-color:${cm.color};color:${cm.color}" ${!prereqMet?'disabled':''}>Train</button>
         <button class="skill-btn" onclick="deleteSkill(${s.id})"><i class="ti ti-x"></i></button>
       </div>
     </div>`;
@@ -904,6 +835,7 @@ function trainSkill(id){
 
 function deleteSkill(id){state.skills=state.skills.filter(s=>s.id!==id);persist();renderSkills();}
 
+// ACHIEVEMENTS
 function checkAchievements(){
   let newUnlock=false;
   ACHIEVEMENTS.forEach(a=>{
@@ -929,13 +861,13 @@ function renderAchievements(){
   }).join('');
 }
 
+// LOG
 function addLog(msg,type,xp,color,cat){
   const now=new Date();
   const time=now.toLocaleDateString('en-IN',{month:'short',day:'numeric'})+' '+now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
   state.log.unshift({msg,type,time,xp,color:color||'#3b9eff',cat});
   if(state.log.length>100)state.log=state.log.slice(0,100);
 }
-
 function renderLog(){
   const list=document.getElementById('log-list');
   if(!state.log.length){list.innerHTML='<div class="empty-state">[ LOG IS EMPTY ]</div>';return;}
@@ -946,14 +878,13 @@ function renderLog(){
       ${l.xp?`<div class="log-xp">+${l.xp} XP</div>`:''}
     </div>`).join('');
 }
-
 function clearLog(){state.log=[];persist();renderLog();}
 
+// DATA
 function exportData(){
   const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='arise_save.json';a.click();
 }
-
 function importData(e){
   const f=e.target.files[0];if(!f)return;
   const r=new FileReader();r.onload=ev=>{
@@ -961,20 +892,9 @@ function importData(e){
     catch{notify('Invalid save file','#e85555');}
   };r.readAsText(f);
 }
-
 function resetAll(){
   if(!confirm('Reset ALL progress? This cannot be undone.'))return;
   localStorage.removeItem('arise_v2');location.reload();
-}
-
-function notify(msg,color){
-  const cont=document.getElementById('notif-container');
-  const div=document.createElement('div');
-  div.className='notif-item';
-  div.style.borderLeftColor=color;
-  div.textContent=msg;
-  cont.appendChild(div);
-  setTimeout(()=>div.remove(),4000);
 }
 
 function showTab(name,btn){
