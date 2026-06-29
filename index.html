@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-<title>ARISE</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#080c14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>ARISE System</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQVJJU0UgU3lzdGVtIiwic2hvcnRfbmFtZSI6IkFSSVNLIiwic3RhcnRfdXJsIjoiLiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiMwODBjMTQiLCJ0aGVtZV9jb2xvciI6IiMwODBjMTQifQ==">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;500;600&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
+
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+html{font-size:clamp(13px,2.5vw,16px);overscroll-behavior-y:none}
 :root{
   --bg:#080c14;--bg2:#0d1420;--bg3:#121b2e;--panel:#0f1929;
   --border:#1e3a5f;--border2:#2a4f7a;
@@ -16,31 +27,53 @@
   --mono:'Share Tech Mono','Courier New',monospace;
   --sans:'Inter',sans-serif;
 }
-body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh}
-.app{max-width:960px;margin:0 auto;padding:16px}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;overscroll-behavior-y:none}
+.app{max-width:960px;margin:0 auto;padding:16px;padding-bottom:calc(16px + env(safe-area-inset-bottom))}
+
+/* Header */
 .sys-header{text-align:center;padding:16px 0 10px;border-bottom:1px solid var(--border);margin-bottom:16px;position:relative}
 .sys-tag{font-family:var(--mono);font-size:10px;color:var(--blue);letter-spacing:4px;margin-bottom:4px}
 .sys-title{font-size:22px;font-weight:600;color:var(--text-bright)}
 .sys-title span{color:var(--blue)}
+
+/* Navigation */
 .nav{display:flex;gap:3px;margin-bottom:16px;background:var(--bg2);padding:4px;border-radius:8px;border:1px solid var(--border);overflow-x:auto}
-.nav-btn{flex:1;min-width:70px;padding:7px 8px;background:transparent;border:none;border-radius:6px;color:var(--text-dim);font-size:11px;font-family:var(--sans);cursor:pointer;white-space:nowrap;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:4px}
+.nav-btn{flex:1;min-width:70px;min-height:44px;padding:7px 8px;background:transparent;border:none;border-radius:6px;color:var(--text-dim);font-size:11px;font-family:var(--sans);cursor:pointer;white-space:nowrap;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:4px}
 .nav-btn i{font-size:13px}
 .nav-btn:hover{color:var(--text);background:var(--bg3)}
 .nav-btn.active{background:var(--blue-dim);color:var(--blue);border:1px solid var(--border2)}
+
+/* Mobile Bottom Nav */
+@media(max-width:640px){
+  .nav{position:fixed;bottom:0;left:0;right:0;margin:0;border-radius:12px 12px 0 0;z-index:100;padding:4px 4px calc(4px + env(safe-area-inset-bottom));background:rgba(13,20,32,0.95);backdrop-filter:blur(10px);border-top:1px solid var(--border);border-bottom:none;overflow-x:auto;touch-action:pan-x}
+  .app{padding:16px 16px calc(90px + env(safe-area-inset-bottom))}
+  .nav-btn{flex-direction:column;font-size:10px;gap:2px;min-width:56px}
+  .nav-btn i{font-size:20px}
+}
+
 .panel{display:none}.panel.active{display:block}
+
+/* Section titles */
 .section-title{font-family:var(--mono);font-size:12px;color:var(--blue);letter-spacing:1px}
 .row-between{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
-.btn-primary{background:var(--blue-dim);border:1px solid var(--border2);border-radius:6px;color:var(--blue);font-size:12px;font-family:var(--sans);padding:6px 12px;cursor:pointer;display:flex;align-items:center;gap:4px;transition:all .15s;white-space:nowrap}
+
+/* Buttons */
+.btn-primary{background:var(--blue-dim);border:1px solid var(--border2);border-radius:6px;color:var(--blue);font-size:12px;font-family:var(--sans);padding:6px 12px;cursor:pointer;display:flex;align-items:center;gap:4px;transition:all .15s;white-space:nowrap;min-height:44px}
 .btn-primary:hover{background:#2a4f7a}
+.btn-primary:active{transform:scale(0.97)}
 .btn-primary i{font-size:13px}
-.btn-sm{background:none;border:1px solid var(--border);border-radius:4px;color:var(--text-dim);font-size:11px;padding:4px 9px;cursor:pointer;font-family:var(--sans);transition:all .15s}
+.btn-sm{background:none;border:1px solid var(--border);border-radius:4px;color:var(--text-dim);font-size:11px;padding:4px 9px;cursor:pointer;font-family:var(--sans);transition:all .15s;min-height:44px;min-width:44px}
 .btn-sm:hover{border-color:var(--border2);color:var(--text)}
 
 /* STATUS */
 .status-top{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
 @media(max-width:580px){.status-top{grid-template-columns:1fr}}
-.player-card{grid-column:1/-1;background:var(--panel);border:1px solid var(--border2);border-radius:10px;padding:16px;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden}
+.player-card{grid-column:1/-1;background:var(--panel);border:1px solid var(--border2);border-radius:10px;padding:16px;display:flex;align-items:center;gap:16px;position:relative;overflow:hidden;animation:borderPulse 3s infinite}
 .player-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),var(--gold),transparent)}
+@keyframes borderPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(59,158,255,0.05)}
+  50%{box-shadow:0 0 20px 2px rgba(59,158,255,0.12)}
+}
 .avatar{width:64px;height:64px;border-radius:50%;background:var(--bg3);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:24px;color:var(--gold);flex-shrink:0}
 .player-info{flex:1;min-width:0}
 .player-name-row{display:flex;align-items:center;gap:8px;margin-bottom:2px;flex-wrap:wrap}
@@ -50,10 +83,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .xp-row{display:flex;align-items:center;gap:8px;margin-top:6px}
 .xp-label{font-family:var(--mono);font-size:10px;color:var(--text-dim);white-space:nowrap}
 .xp-bar-wrap{flex:1;height:7px;background:var(--bg3);border-radius:4px;overflow:hidden;border:1px solid var(--border)}
-.xp-bar{height:100%;border-radius:4px;background:var(--gold);transition:width .5s}
+.xp-bar{height:100%;border-radius:4px;background:var(--gold);transition:width .5s ease-out;box-shadow:0 0 8px rgba(245,183,49,0.3)}
 .level-num{font-family:var(--mono);font-size:20px;color:var(--gold);font-weight:600}
 .streak-badge{display:flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;padding:3px 9px;border-radius:4px;background:rgba(245,183,49,0.1);border:1px solid var(--gold-dim);color:var(--gold);white-space:nowrap}
 .multiplier{font-size:10px;color:var(--green);font-family:var(--mono)}
+.rest-day-btn{font-family:var(--mono);font-size:10px;padding:4px 10px;border-radius:4px;background:rgba(59,158,255,0.1);border:1px solid var(--blue);color:var(--blue);cursor:pointer;margin-top:6px;transition:all .15s}
+.rest-day-btn:disabled{opacity:0.4;cursor:not-allowed}
+.rest-day-btn:not(:disabled):hover{background:rgba(59,158,255,0.2)}
 
 /* Stat card */
 .stat-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px}
@@ -61,9 +97,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .stat-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
 .stat-name{font-family:var(--mono);font-size:11px;width:32px;flex-shrink:0}
 .stat-bar-wrap{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden}
-.stat-bar{height:100%;border-radius:3px;transition:width .5s}
+.stat-bar{height:100%;border-radius:3px;transition:width .5s ease-out;box-shadow:0 0 6px currentColor}
 .stat-val{font-family:var(--mono);font-size:11px;color:var(--text-bright);width:26px;text-align:right;flex-shrink:0}
-.stat-plus{background:none;border:1px solid var(--border2);border-radius:3px;color:var(--blue);width:18px;height:18px;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;line-height:1}
+.stat-plus{background:none;border:1px solid var(--border2);border-radius:3px;color:var(--blue);width:18px;height:18px;font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s;line-height:1;min-width:44px;min-height:44px}
 .stat-plus:hover{background:var(--blue-dim)}
 .stat-points-row{font-family:var(--mono);font-size:10px;color:var(--gold);text-align:right;margin-top:6px}
 
@@ -85,13 +121,26 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .week-day{text-align:center}
 .week-label{font-family:var(--mono);font-size:9px;color:var(--text-dim);margin-bottom:3px}
 .week-bar-wrap{height:40px;background:var(--bg3);border-radius:3px;overflow:hidden;display:flex;align-items:flex-end}
-.week-bar{width:100%;border-radius:3px;background:var(--blue);transition:height .4s}
+.week-bar{width:100%;border-radius:3px;background:var(--blue);transition:height .4s ease-out}
 .week-val{font-family:var(--mono);font-size:9px;color:var(--text-dim);margin-top:3px}
+
+/* GitHub Contribution Chart */
+.github-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px}
+.github-chart-wrap{overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.github-chart{display:grid;grid-template-rows:repeat(7,1fr);grid-auto-flow:column;gap:3px;width:max-content}
+.github-cell{width:10px;height:10px;border-radius:2px;background:var(--bg3);border:1px solid rgba(30,58,95,0.3)}
+.github-cell.l1{background:rgba(63,214,138,0.25);border-color:rgba(63,214,138,0.3)}
+.github-cell.l2{background:rgba(63,214,138,0.5);border-color:rgba(63,214,138,0.4)}
+.github-cell.l3{background:rgba(63,214,138,0.75);border-color:rgba(63,214,138,0.5)}
+.github-cell.l4{background:rgba(63,214,138,1);border-color:rgba(63,214,138,0.7)}
+.github-legend{display:flex;align-items:center;gap:6px;margin-top:8px;justify-content:flex-end}
+.github-legend span{font-family:var(--mono);font-size:9px;color:var(--text-dim)}
+.github-month-labels{position:relative;height:14px;margin-bottom:4px}
 
 /* Achievements */
 .ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:10px}
-.ach-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center;transition:border-color .15s}
-.ach-item.unlocked{border-color:var(--gold-dim)}
+.ach-item{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center;transition:border-color .15s,transform .15s}
+.ach-item.unlocked{border-color:var(--gold-dim);transform:scale(1.02)}
 .ach-icon{font-size:20px;margin-bottom:5px}
 .ach-name{font-size:11px;color:var(--text-bright);margin-bottom:2px}
 .ach-desc{font-size:10px;color:var(--text-dim);font-family:var(--mono)}
@@ -100,16 +149,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 
 /* QUESTS */
 .quest-filters{display:flex;gap:5px;margin-bottom:12px;flex-wrap:wrap}
-.filter-btn{padding:3px 10px;border-radius:20px;border:1px solid var(--border);background:none;color:var(--text-dim);font-size:10px;cursor:pointer;font-family:var(--sans);transition:all .15s;white-space:nowrap}
+.filter-btn{padding:3px 10px;border-radius:20px;border:1px solid var(--border);background:none;color:var(--text-dim);font-size:10px;cursor:pointer;font-family:var(--sans);transition:all .15s;white-space:nowrap;min-height:32px}
 .filter-btn:hover{color:var(--text);border-color:var(--border2)}
 .filter-btn.active{border-color:var(--blue);color:var(--blue);background:rgba(59,158,255,.08)}
 .quest-list{display:flex;flex-direction:column;gap:7px}
-.quest-item{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:12px;transition:border-color .15s}
+.quest-item{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:12px;transition:border-color .15s,transform .15s}
 .quest-item:hover{border-color:var(--border2)}
+.quest-item:active{transform:scale(0.995)}
 .quest-item.done{opacity:.5}
 .quest-item.overdue{border-color:rgba(232,85,85,.4)}
 .quest-top{display:flex;align-items:flex-start;gap:10px}
-.quest-check{width:18px;height:18px;border-radius:3px;border:1px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--green);font-size:12px;background:none;cursor:pointer;transition:all .15s;margin-top:1px}
+.quest-check{width:18px;height:18px;border-radius:3px;border:1px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--green);font-size:12px;background:none;cursor:pointer;transition:all .15s;margin-top:1px;min-width:44px;min-height:44px}
 .quest-check:hover{background:rgba(63,214,138,.1);border-color:var(--green)}
 .quest-check.checked{background:rgba(63,214,138,.15);border-color:var(--green)}
 .quest-body{flex:1;min-width:0}
@@ -123,32 +173,33 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .quest-due{font-family:var(--mono);font-size:10px;color:var(--text-dim)}
 .quest-due.overdue{color:var(--red)}
 .quest-actions{display:flex;gap:4px;flex-shrink:0}
-.quest-del{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:14px;padding:2px;transition:color .15s}
+.quest-del{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:14px;padding:2px;transition:color .15s;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
 .quest-del:hover{color:var(--red)}
 .subtask-list{margin-top:8px;padding-left:4px;display:flex;flex-direction:column;gap:4px}
 .subtask-row{display:flex;align-items:center;gap:6px}
-.subtask-check{width:14px;height:14px;border-radius:2px;border:1px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--green);background:none;cursor:pointer;transition:all .15s}
+.subtask-check{width:14px;height:14px;border-radius:2px;border:1px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--green);background:none;cursor:pointer;transition:all .15s;min-width:44px;min-height:44px}
 .subtask-check.checked{background:rgba(63,214,138,.15);border-color:var(--green)}
 .subtask-text{font-size:12px;color:var(--text-dim)}
 .subtask-text.done{text-decoration:line-through}
 .subtask-progress{height:3px;background:var(--bg3);border-radius:2px;overflow:hidden;margin-top:5px}
-.subtask-progress-fill{height:100%;border-radius:2px;background:var(--green);transition:width .3s}
+.subtask-progress-fill{height:100%;border-radius:2px;background:var(--green);transition:width .3s ease-out}
 .penalty-badge{font-family:var(--mono);font-size:9px;color:var(--red);padding:2px 6px;border:1px solid rgba(232,85,85,.3);border-radius:3px;background:rgba(232,85,85,.08)}
 .recurring-badge{font-family:var(--mono);font-size:9px;color:var(--purple);padding:2px 6px;border:1px solid rgba(159,122,234,.3);border-radius:3px;background:rgba(159,122,234,.08)}
 
 /* SKILLS */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
-.skill-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;transition:border-color .15s}
+.skill-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;transition:border-color .15s,transform .15s}
 .skill-card:hover{border-color:var(--border2)}
+.skill-card:active{transform:scale(0.98)}
 .skill-icon{font-size:24px;margin-bottom:6px}
 .skill-name{font-size:12px;font-weight:500;color:var(--text-bright);margin-bottom:2px}
 .skill-area{font-size:9px;color:var(--text-dim);font-family:var(--mono);margin-bottom:8px}
 .skill-level-bar{height:4px;background:var(--bg3);border-radius:2px;margin-bottom:4px;overflow:hidden}
-.skill-level-fill{height:100%;border-radius:2px;transition:width .4s}
+.skill-level-fill{height:100%;border-radius:2px;transition:width .4s ease-out}
 .skill-lv{font-family:var(--mono);font-size:10px;margin-bottom:2px}
 .skill-decay{font-family:var(--mono);font-size:9px;color:var(--red)}
 .skill-btns{display:flex;gap:5px;margin-top:8px;justify-content:center}
-.skill-btn{background:none;border:1px solid var(--border);border-radius:4px;color:var(--text-dim);font-size:11px;padding:3px 9px;cursor:pointer;font-family:var(--sans);transition:all .15s}
+.skill-btn{background:none;border:1px solid var(--border);border-radius:4px;color:var(--text-dim);font-size:11px;padding:3px 9px;cursor:pointer;font-family:var(--sans);transition:all .15s;min-height:44px;min-width:44px}
 .skill-req-badge{font-size:9px;color:var(--text-dim);font-family:var(--mono);margin-top:4px}
 .skill-locked{opacity:.5;pointer-events:none}
 
@@ -159,25 +210,18 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .log-msg{font-size:12px;color:var(--text);flex:1}
 .log-xp{font-family:var(--mono);font-size:11px;color:var(--gold);flex-shrink:0}
 
-/* Modal */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;align-items:center;justify-content:center}
-.modal-overlay.open{display:flex}
-.modal{background:var(--panel);border:1px solid var(--border2);border-radius:12px;padding:20px;width:100%;max-width:440px;margin:16px;max-height:90vh;overflow-y:auto}
-.modal-title{font-family:var(--mono);font-size:13px;color:var(--blue);margin-bottom:14px}
+/* Form elements (used inside Swal) */
 .form-field{margin-bottom:10px}
 .form-label{font-size:10px;color:var(--text-dim);margin-bottom:4px;font-family:var(--mono);display:block}
 .form-input,.form-select{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--text-bright);font-size:12px;padding:7px 9px;font-family:var(--sans);outline:none;transition:border-color .15s}
 .form-input:focus,.form-select:focus{border-color:var(--blue)}
 .form-select option{background:var(--bg2)}
-.modal-actions{display:flex;gap:7px;margin-top:14px}
-.btn-cancel{flex:1;padding:8px;border:1px solid var(--border);background:none;border-radius:6px;color:var(--text-dim);font-size:12px;cursor:pointer;font-family:var(--sans)}
-.btn-confirm{flex:1;padding:8px;border:1px solid var(--border2);background:var(--blue-dim);border-radius:6px;color:var(--blue);font-size:12px;cursor:pointer;font-family:var(--sans)}
 .subtask-input-row{display:flex;gap:6px;margin-bottom:6px}
 .subtask-input-row input{flex:1}
-.subtask-input-row button{background:var(--blue-dim);border:1px solid var(--border2);border-radius:4px;color:var(--blue);font-size:11px;padding:4px 8px;cursor:pointer;white-space:nowrap}
+.subtask-input-row button{background:var(--blue-dim);border:1px solid var(--border2);border-radius:4px;color:var(--blue);font-size:11px;padding:4px 8px;cursor:pointer;white-space:nowrap;min-height:44px}
 .subtask-preview{display:flex;flex-direction:column;gap:3px;max-height:80px;overflow-y:auto}
 .subtask-preview-item{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--text);padding:2px 6px;background:var(--bg3);border-radius:3px}
-.subtask-preview-item button{background:none;border:none;color:var(--red);cursor:pointer;font-size:12px}
+.subtask-preview-item button{background:none;border:none;color:var(--red);cursor:pointer;font-size:12px;min-width:44px;min-height:44px}
 
 /* Notification */
 .notif{position:fixed;top:16px;right:16px;z-index:999;display:flex;flex-direction:column;gap:6px;pointer-events:none;max-width:280px}
@@ -188,39 +232,47 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .scan-line{font-family:var(--mono);font-size:9px;color:var(--text-dim);text-align:center;margin-top:20px;letter-spacing:2px}
 .export-row{display:flex;gap:6px;flex-wrap:wrap}
 
-/* FOOTER NAV */
-body{display:flex;flex-direction:column;min-height:100vh}
-.app{flex:1;padding-bottom:70px}
-@media(max-width:480px){.app{padding-bottom:64px}}
-.footer-nav{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:1px solid var(--border);z-index:100;display:flex}
-.footer-nav .nav-btn{flex:1;padding:8px 4px;min-height:60px;border:none;background:transparent;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--text-dim);font-size:9px;font-family:var(--sans);cursor:pointer;transition:all .15s}
-@media(max-width:480px){.footer-nav .nav-btn{min-height:56px;font-size:8px;gap:2px;padding:6px 2px}}
-.footer-nav .nav-btn i{font-size:18px}
-.footer-nav .nav-btn:last-child{border-right:none}
-.footer-nav .nav-btn:hover{background:var(--bg3);color:var(--text)}
-.footer-nav .nav-btn.active{background:var(--blue-dim);color:var(--blue);border-bottom:3px solid var(--blue)}
+/* FX Canvas */
+#fx-canvas{position:fixed;inset:0;pointer-events:none;z-index:999}
 
-/* HEATMAP */
-.heatmap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(14px,1fr));gap:2px;margin-top:8px}
-.heatmap-cell{width:14px;height:14px;border-radius:2px;cursor:pointer;border:1px solid var(--border);transition:all .2s}
-.heatmap-cell:hover{transform:scale(1.2);border-color:var(--blue)}
-.heatmap-cell.level0{background:var(--bg3)}
-.heatmap-cell.level1{background:rgba(63,214,138,0.2)}
-.heatmap-cell.level2{background:rgba(63,214,138,0.4)}
-.heatmap-cell.level3{background:rgba(63,214,138,0.6)}
-.heatmap-cell.level4{background:var(--green)}
-.heatmap-legend{display:flex;align-items:center;gap:6px;font-size:8px;color:var(--text-dim);font-family:var(--mono);margin-top:6px;justify-content:center}
-.heatmap-legend span{display:inline}
-.heatmap-legend-item{display:inline-flex;align-items:center;gap:3px}
-.heatmap-legend-cell{width:10px;height:10px;border-radius:1px}
+/* SweetAlert2 Dark Theme Overrides */
+.swal2-popup{background:#0f1929 !important;border:1px solid #1e3a5f !important;border-radius:12px !important;color:#c8d8f0 !important;font-family:'Inter',sans-serif !important}
+.swal2-title{color:#3b9eff !important;font-family:'Share Tech Mono','Courier New',monospace !important;font-size:14px !important;letter-spacing:1px;text-transform:uppercase}
+.swal2-html-container{color:#c8d8f0 !important;padding-top:4px !important}
+.swal2-confirm{background:#1a5fa8 !important;border:1px solid #2a4f7a !important;color:#3b9eff !important;border-radius:6px !important;font-family:'Inter',sans-serif !important;font-size:12px !important;padding:8px 16px !important;box-shadow:none !important}
+.swal2-confirm:focus{box-shadow:0 0 0 3px rgba(59,158,255,0.3) !important}
+.swal2-cancel{background:transparent !important;border:1px solid #1e3a5f !important;color:#5a7a9a !important;border-radius:6px !important;font-family:'Inter',sans-serif !important;font-size:12px !important;padding:8px 16px !important}
+.swal2-cancel:focus{box-shadow:0 0 0 3px rgba(90,122,154,0.2) !important}
+.swal2-validation-message{background:rgba(232,85,85,0.15) !important;color:#e85555 !important;border-radius:4px !important;font-family:'Share Tech Mono',monospace !important;font-size:11px !important}
+.swal2-icon{border-color:#1e3a5f !important}
+.swal2-icon.swal2-warning{border-color:#f5b731 !important;color:#f5b731 !important}
+.swal2-icon.swal2-error{border-color:#e85555 !important;color:#e85555 !important}
+.swal2-icon.swal2-success{border-color:#3fd68a !important;color:#3fd68a !important}
+.swal2-icon.swal2-info{border-color:#3b9eff !important;color:#3b9eff !important}
+.swal2-timer-progress-bar{background:#3b9eff !important}
+.swal2-input,.swal2-select,.swal2-textarea{background:#0d1420 !important;border:1px solid #1e3a5f !important;color:#e8f4ff !important;border-radius:6px !important}
 </style>
+</head>
+
+<body>
+
+<canvas id="fx-canvas"></canvas>
 
 <div class="notif" id="notif-container"></div>
 
 <div class="app">
   <div class="sys-header">
-    <div class="sys-tag">▸ system v2.0 online ◂</div>
+    <div class="sys-tag">▸ system v2.3 online ◂</div>
     <div class="sys-title">ARISE <span>SYSTEM</span></div>
+  </div>
+
+  <div class="nav" id="main-nav">
+    <button class="nav-btn active" onclick="showTab('status',this)"><i class="ti ti-shield-half"></i> Status</button>
+    <button class="nav-btn" onclick="showTab('quests',this)"><i class="ti ti-list-check"></i> Quests</button>
+    <button class="nav-btn" onclick="showTab('skills',this)"><i class="ti ti-bolt"></i> Skills</button>
+    <button class="nav-btn" onclick="showTab('achieve',this)"><i class="ti ti-trophy"></i> Awards</button>
+    <button class="nav-btn" onclick="showTab('log',this)"><i class="ti ti-clock"></i> Log</button>
+    <button class="nav-btn" onclick="showTab('settings',this)"><i class="ti ti-settings"></i> Data</button>
   </div>
 
   <!-- STATUS -->
@@ -242,6 +294,7 @@ body{display:flex;flex-direction:column;min-height:100vh}
             <div class="xp-label" id="xp-label">0/100</div>
           </div>
           <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim);margin-top:4px" id="total-xp-display"></div>
+          <button class="rest-day-btn" id="rest-day-btn" onclick="useRestDay()" title="Once per week, prevents streak break">🛡️ Use Rest Day</button>
         </div>
       </div>
 
@@ -266,13 +319,30 @@ body{display:flex;flex-direction:column;min-height:100vh}
     </div>
 
     <div class="weekly-card" style="margin-top:12px">
-      <div class="section-title">▸ DAILY STREAK HEATMAP</div>
-      <div class="heatmap-grid" id="heatmap-grid"></div>
-      <div class="heatmap-legend">
+      <div class="row-between">
+        <div class="section-title">▸ WEEKLY ACTIVITY</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)" id="week-total"></div>
+      </div>
+      <div class="week-grid" id="week-grid"></div>
+    </div>
+
+    <!-- GitHub-style Contribution Chart -->
+    <div class="github-card" style="margin-top:12px">
+      <div class="row-between">
+        <div class="section-title">▸ CONTRIBUTION MAP</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--text-dim)">Last 365 days</div>
+      </div>
+      <div class="github-month-labels" id="github-month-labels"></div>
+      <div class="github-chart-wrap">
+        <div class="github-chart" id="github-chart"></div>
+      </div>
+      <div class="github-legend">
         <span>Less</span>
-        <div class="heatmap-legend-item"><div class="heatmap-legend-cell level0" style="background:var(--bg3)"></div></div>
-        <div class="heatmap-legend-item"><div class="heatmap-legend-cell level2" style="background:rgba(63,214,138,0.4)"></div></div>
-        <div class="heatmap-legend-item"><div class="heatmap-legend-cell level4" style="background:var(--green)"></div></div>
+        <div class="github-cell" style="width:10px;height:10px"></div>
+        <div class="github-cell l1" style="width:10px;height:10px"></div>
+        <div class="github-cell l2" style="width:10px;height:10px"></div>
+        <div class="github-cell l3" style="width:10px;height:10px"></div>
+        <div class="github-cell l4" style="width:10px;height:10px"></div>
         <span>More</span>
       </div>
     </div>
@@ -283,7 +353,8 @@ body{display:flex;flex-direction:column;min-height:100vh}
     <div class="row-between">
       <div class="section-title">▸ QUEST BOARD</div>
       <div style="display:flex;gap:6px">
-        <button class="btn-primary" onclick="openQuestModal()"><i class="ti ti-plus"></i> New Quest</button>
+        <button class="btn-primary" onclick="openTemplatesModal()"><i class="ti ti-template"></i> Templates</button>
+        <button class="btn-primary" onclick="openQuestModal()"><i class="ti ti-plus"></i> New</button>
       </div>
     </div>
     <div class="quest-filters" id="quest-filters"></div>
@@ -337,116 +408,98 @@ body{display:flex;flex-direction:column;min-height:100vh}
     </div>
   </div>
 
-  <div class="scan-line">◈ ARISE SYSTEM v2.0 ◈ ENHANCED HUNTER INTERFACE ◈</div>
+  <div class="scan-line">◈ ARISE SYSTEM v2.3 ◈ ENHANCED HUNTER INTERFACE ◈</div>
 </div>
 
-<div class="footer-nav">
-  <button class="nav-btn active" onclick="showTab('status',this)"><i class="ti ti-shield-half"></i><span>Status</span></button>
-  <button class="nav-btn" onclick="showTab('quests',this)"><i class="ti ti-list-check"></i><span>Quests</span></button>
-  <button class="nav-btn" onclick="showTab('skills',this)"><i class="ti ti-bolt"></i><span>Skills</span></button>
-  <button class="nav-btn" onclick="showTab('achieve',this)"><i class="ti ti-trophy"></i><span>Awards</span></button>
-  <button class="nav-btn" onclick="showTab('log',this)"><i class="ti ti-clock"></i><span>Log</span></button>
-  <button class="nav-btn" onclick="showTab('settings',this)"><i class="ti ti-settings"></i><span>Data</span></button>
-</div>
-
-<!-- Quest Modal -->
-<div class="modal-overlay" id="quest-modal">
-  <div class="modal">
-    <div class="modal-title">▸ NEW QUEST</div>
-    <div class="form-field"><label class="form-label">Quest Name</label><input class="form-input" id="q-name" placeholder="e.g. Run 5km without stopping"/></div>
-    <div class="form-field"><label class="form-label">Category</label>
-      <select class="form-select" id="q-cat">
-        <option value="fitness">Fitness & Health</option>
-        <option value="habits">Habits & Daily Tasks</option>
-        <option value="social">Social & Relationships</option>
-        <option value="study">Study & Skills</option>
-        <option value="work">Work & Career</option>
-      </select>
-    </div>
-    <div class="form-field"><label class="form-label">Difficulty</label>
-      <select class="form-select" id="q-diff">
-        <option value="F">F — Trivial (5 XP)</option>
-        <option value="E" selected>E — Easy (15 XP)</option>
-        <option value="D">D — Normal (30 XP)</option>
-        <option value="C">C — Hard (60 XP)</option>
-        <option value="B">B — Very Hard (100 XP)</option>
-        <option value="A">A — Elite (200 XP)</option>
-        <option value="S">S — Legendary (500 XP)</option>
-      </select>
-    </div>
-    <div class="form-field"><label class="form-label">Stat Rewarded</label>
-      <select class="form-select" id="q-stat">
-        <option value="STR">STR — Strength</option>
-        <option value="AGI">AGI — Agility</option>
-        <option value="INT">INT — Intelligence</option>
-        <option value="CHA">CHA — Charisma</option>
-        <option value="VIT">VIT — Vitality</option>
-        <option value="SEN">SEN — Sense</option>
-      </select>
-    </div>
-    <div class="form-field"><label class="form-label">Type</label>
-      <select class="form-select" id="q-type">
-        <option value="once">One-time quest</option>
-        <option value="daily">Daily (resets midnight)</option>
-        <option value="weekly">Weekly</option>
-      </select>
-    </div>
-    <div class="form-field"><label class="form-label">Due Date (optional)</label><input class="form-input" id="q-due" type="date"/></div>
-    <div class="form-field"><label class="form-label">Penalty for failure</label>
-      <select class="form-select" id="q-penalty">
-        <option value="0">No penalty</option>
-        <option value="5">Lose 5 XP</option>
-        <option value="15">Lose 15 XP</option>
-        <option value="30">Lose 30 XP</option>
-      </select>
-    </div>
-    <div class="form-field">
-      <label class="form-label">Sub-tasks (optional)</label>
-      <div class="subtask-input-row">
-        <input class="form-input" id="st-input" placeholder="Add sub-task..."/>
-        <button onclick="addSubtaskToForm()">+ Add</button>
-      </div>
-      <div class="subtask-preview" id="st-preview"></div>
-    </div>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeQuestModal()">Cancel</button>
-      <button class="btn-confirm" onclick="addQuest()">Add Quest</button>
-    </div>
-  </div>
-</div>
-
-<!-- Skill Modal -->
-<div class="modal-overlay" id="skill-modal">
-  <div class="modal">
-    <div class="modal-title">▸ NEW SKILL</div>
-    <div class="form-field"><label class="form-label">Skill Name</label><input class="form-input" id="sk-name" placeholder="e.g. Python Programming"/></div>
-    <div class="form-field"><label class="form-label">Category</label>
-      <select class="form-select" id="sk-cat">
-        <option value="fitness">Fitness & Health</option>
-        <option value="habits">Habits & Daily Tasks</option>
-        <option value="social">Social & Relationships</option>
-        <option value="study">Study & Skills</option>
-        <option value="work">Work & Career</option>
-      </select>
-    </div>
-    <div class="form-field"><label class="form-label">Linked Stat</label>
-      <select class="form-select" id="sk-stat">
-        <option value="STR">STR</option><option value="AGI">AGI</option>
-        <option value="INT">INT</option><option value="CHA">CHA</option>
-        <option value="VIT">VIT</option><option value="SEN">SEN</option>
-      </select>
-    </div>
-    <div class="form-field"><label class="form-label">Prerequisite (optional — another skill must be LV 5+)</label>
-      <select class="form-select" id="sk-prereq"><option value="">None</option></select>
-    </div>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeSkillModal()">Cancel</button>
-      <button class="btn-confirm" onclick="addSkill()">Add Skill</button>
-    </div>
-  </div>
-</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
+// ===================== AUDIO & HAPTICS =====================
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+let audioInitialized = false;
+function initAudio(){if(audioInitialized)return;if(audioCtx.state==='suspended')audioCtx.resume();audioInitialized=true}
+document.addEventListener('click',initAudio,{once:true});
+
+function playTone(freq,type,duration){
+  if(!audioInitialized)return;
+  const osc=audioCtx.createOscillator();
+  const gain=audioCtx.createGain();
+  osc.type=type;osc.frequency.value=freq;
+  osc.connect(gain);gain.connect(audioCtx.destination);
+  osc.start();
+  gain.gain.setValueAtTime(0.1,audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+duration);
+  osc.stop(audioCtx.currentTime+duration);
+}
+
+function playSuccess(){
+  if(!audioInitialized)return;
+  playTone(523,'sine',0.08);
+  setTimeout(()=>playTone(659,'sine',0.08),80);
+  setTimeout(()=>playTone(784,'sine',0.15),160);
+}
+function playRankUp(){
+  if(!audioInitialized)return;
+  playTone(392,'square',0.12);
+  setTimeout(()=>playTone(523,'square',0.12),120);
+  setTimeout(()=>playTone(659,'square',0.12),240);
+  setTimeout(()=>playTone(784,'square',0.3),360);
+}
+function playLevelUp(){
+  if(!audioInitialized)return;
+  playTone(440,'sine',0.1);
+  setTimeout(()=>playTone(554,'sine',0.1),100);
+  setTimeout(()=>playTone(659,'sine',0.2),200);
+}
+
+function haptic(type='light'){
+  if(!navigator.vibrate)return;
+  if(type==='heavy')navigator.vibrate([50,30,80]);
+  else if(type==='success')navigator.vibrate(40);
+  else navigator.vibrate(20);
+}
+
+// ===================== FX / CONFETTI =====================
+const fxCanvas=document.getElementById('fx-canvas');
+const fxCtx=fxCanvas.getContext('2d');
+let particles=[],animating=false;
+
+function resizeFx(){fxCanvas.width=window.innerWidth;fxCanvas.height=window.innerHeight}
+window.addEventListener('resize',resizeFx);resizeFx();
+
+function spawnConfetti(color='#f5b731'){
+  const cx=window.innerWidth/2,cy=window.innerHeight/2;
+  for(let i=0;i<60;i++){
+    const angle=Math.random()*Math.PI*2;
+    const speed=Math.random()*6+2;
+    particles.push({
+      x:cx,y:cy,
+      vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed-3,
+      life:1,color,size:Math.random()*4+2,
+      rot:Math.random()*Math.PI,rotSpeed:(Math.random()-0.5)*0.2
+    });
+  }
+  if(!animating){animating=true;requestAnimationFrame(loopFx)}
+}
+
+function loopFx(){
+  fxCtx.clearRect(0,0,fxCanvas.width,fxCanvas.height);
+  particles.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;p.vy+=0.25;p.life-=0.015;p.rot+=p.rotSpeed;
+    fxCtx.globalAlpha=p.life;
+    fxCtx.save();
+    fxCtx.translate(p.x,p.y);
+    fxCtx.rotate(p.rot);
+    fxCtx.fillStyle=p.color;
+    fxCtx.fillRect(-p.size/2,-p.size/2,p.size,p.size);
+    fxCtx.restore();
+  });
+  particles=particles.filter(p=>p.life>0);
+  if(particles.length)requestAnimationFrame(loopFx);
+  else animating=false;
+}
+
+// ===================== DATA & STATE =====================
 const RANKS=[
   {rank:'E',label:'Iron Hunter',xp:0,color:'#888'},
   {rank:'D',label:'Bronze Hunter',xp:500,color:'#c87533'},
@@ -490,12 +543,32 @@ const TITLES=[
   {id:'hunter',name:'Hunter',req:s=>s.totalXP>=1000,color:'#3fd68a'},
 ];
 
+const TEMPLATES={
+  workout:{name:'Morning workout (30 min)',cat:'fitness',diff:'D',stat:'STR',type:'daily'},
+  read:{name:'Read 20 pages',cat:'study',diff:'E',stat:'INT',type:'daily'},
+  water:{name:'Drink 3L water',cat:'habits',diff:'E',stat:'VIT',type:'daily'},
+  meditate:{name:'Meditate 10 minutes',cat:'habits',diff:'D',stat:'SEN',type:'daily'},
+  focus:{name:'Deep work session (2 hours)',cat:'work',diff:'C',stat:'INT',type:'daily'},
+  social:{name:'Check in with a friend',cat:'social',diff:'E',stat:'CHA',type:'weekly'},
+  sleep:{name:'Sleep 8 hours',cat:'habits',diff:'D',stat:'VIT',type:'daily'},
+};
+
 function load(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch{return d}}
 function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}
 
-const TODAY=()=>new Date().toISOString().slice(0,10);
+function TODAY(){
+  const d=new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function getWeekKey(){
+  const d=new Date();
+  const day=d.getDay();
+  const diff=d.getDate()-day+(day===0?-6:1);
+  const monday=new Date(d.setDate(diff));
+  return monday.getFullYear()+'-'+String(monday.getMonth()+1).padStart(2,'0')+'-'+String(monday.getDate()).padStart(2,'0');
+}
 
-let state=load('arise_v2',{
+const defaultState={
   name:'Siddhant',totalXP:0,statPoints:0,streak:0,lastActiveDate:null,
   stats:{STR:10,AGI:10,INT:10,CHA:10,VIT:10,SEN:10},
   quests:[
@@ -508,28 +581,53 @@ let state=load('arise_v2',{
     {id:2,name:'Deep Focus',cat:'study',stat:'INT',level:1,xp:0,lastTrained:null,prereq:''},
   ],
   log:[],achievements:[],questFilter:'all',weeklyXP:{},
-});
+  restDayActive:false,restDayWeek:null,_lastRank:'E',_lastLevel:1,
+};
+
+let state;
+const loaded=load('arise_v2',null);
+if(!loaded){
+  state=JSON.parse(JSON.stringify(defaultState));
+}else{
+  state=loaded;
+  for(const k in defaultState){
+    if(state[k]===undefined)state[k]=JSON.parse(JSON.stringify(defaultState[k]));
+  }
+}
 
 let _qId=Math.max(0,...state.quests.map(q=>q.id),0)+1;
 let _skId=Math.max(0,...state.skills.map(s=>s.id),0)+1;
-let _formSubs=[];
+let _qFormSubs=[];
 
 function persist(){save('arise_v2',state)}
 
 function checkDailyReset(){
   const today=TODAY();
   if(state.lastActiveDate===today)return;
-  const yesterday=new Date();yesterday.setDate(yesterday.getDate()-1);
-  const yStr=yesterday.toISOString().slice(0,10);
-  if(state.lastActiveDate===yStr){state.streak++;addLog(`Day ${state.streak} streak maintained!`,'system',null,'#f5b731')}
-  else if(state.lastActiveDate&&state.lastActiveDate!==today){
-    if(state.streak>0){
-      const pen=state.quests.filter(q=>q.type==='daily'&&!q.done).reduce((a,q)=>a+parseInt(q.penalty||0),0);
-      if(pen>0){state.totalXP=Math.max(0,state.totalXP-pen);addLog(`Missed daily quests — lost ${pen} XP`,'penalty',null,'#e85555')}
-      addLog(`Streak broken. Reset to 0.`,'system',null,'#e85555');
+  
+  const yesterday=new Date();
+  yesterday.setDate(yesterday.getDate()-1);
+  const yStr=yesterday.getFullYear()+'-'+String(yesterday.getMonth()+1).padStart(2,'0')+'-'+String(yesterday.getDate()).padStart(2,'0');
+  
+  if(state.lastActiveDate===yStr){
+    state.streak++;
+    addLog(`Day ${state.streak} streak maintained!`,'system',null,'#f5b731');
+    haptic('success');
+  }else if(state.lastActiveDate&&state.lastActiveDate!==today){
+    if(state.restDayActive){
+      state.restDayActive=false;
+      addLog(`Rest day consumed! Streak maintained at ${state.streak}.`,'system',null,'#3b9eff');
+      notify('🛡️ Rest day used — streak saved!','#3b9eff');
+    }else{
+      if(state.streak>0){
+        const pen=state.quests.filter(q=>q.type==='daily'&&!q.done).reduce((a,q)=>a+parseInt(q.penalty||0),0);
+        if(pen>0){state.totalXP=Math.max(0,state.totalXP-pen);addLog(`Missed daily quests — lost ${pen} XP`,'penalty',null,'#e85555')}
+        addLog(`Streak broken. Reset to 0.`,'system',null,'#e85555');
+      }
+      state.streak=0;
     }
-    state.streak=0;
   }
+  
   state.quests.forEach(q=>{
     if(q.type==='daily'&&q.doneDate!==today){q.done=false;q.subtasks.forEach(st=>st.done=false)}
     if(q.type==='weekly'){
@@ -554,6 +652,7 @@ function notify(msg,color='#3b9eff'){
   c.appendChild(el);setTimeout(()=>el.remove(),3500);
 }
 
+// ===================== RENDER STATUS =====================
 function renderStatus(){
   const rank=getRank(state.totalXP);
   const{level,remaining,needed}=getLevel(state.totalXP);
@@ -601,8 +700,20 @@ function renderStatus(){
     </div>`).join('');
   document.getElementById('stat-pts-display').textContent=state.statPoints>0?`▸ ${state.statPoints} point${state.statPoints>1?'s':''} to spend`:'';
 
+  const rdb=document.getElementById('rest-day-btn');
+  const currentWeek=getWeekKey();
+  const usedThisWeek=state.restDayWeek===currentWeek;
+  if(usedThisWeek||state.restDayActive){
+    rdb.textContent=state.restDayActive?'🛡️ Rest Day Active':'🛡️ Rest Day Used';
+    rdb.disabled=true;
+  }else{
+    rdb.textContent='🛡️ Use Rest Day';
+    rdb.disabled=false;
+  }
+
   drawRadar();
-  renderHeatmap();
+  renderWeekly();
+  renderGitHubChart();
 }
 
 function drawRadar(){
@@ -637,18 +748,72 @@ function drawRadar(){
   }
 }
 
-function renderHeatmap(){
-  if(!state.heatmap)state.heatmap={};
-  const grid=document.getElementById('heatmap-grid');
-  const today=new Date();let cells='';
-  for(let i=83;i>=0;i--){
-    const d=new Date(today);d.setDate(d.getDate()-i);
-    const key=d.toISOString().split('T')[0];
-    const v=state.heatmap[key]||0;
-    const lv=v>70?4:v>50?3:v>25?2:v>0?1:0;
-    cells+=`<div class="heatmap-cell level${lv}" title="${key}: ${v} XP"></div>`;
+function renderWeekly(){
+  const days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const today=new Date();const dow=today.getDay();const mondayOff=(dow+6)%7;
+  const maxXP=Math.max(1,...days.map((_,i)=>{
+    const d=new Date(today);d.setDate(d.getDate()-mondayOff+i);
+    return state.weeklyXP[d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')]||0;
+  }));
+  let total=0;
+  document.getElementById('week-grid').innerHTML=days.map((_,i)=>{
+    const d=new Date(today);d.setDate(d.getDate()-mondayOff+i);
+    const ds=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'),xp=state.weeklyXP[ds]||0;total+=xp;
+    const h=Math.round((xp/maxXP)*38)||0;
+    return`<div class="week-day"><div class="week-label">${days[i]}</div><div class="week-bar-wrap"><div class="week-bar" style="height:${h}px;background:${ds===TODAY()?'var(--gold)':'var(--blue)'}"></div></div><div class="week-val">${xp}</div></div>`;
+  }).join('');
+  document.getElementById('week-total').textContent=`${total} XP this week`;
+}
+
+// ===================== GITHUB CHART =====================
+function renderGitHubChart(){
+  const chart=document.getElementById('github-chart');
+  const labels=document.getElementById('github-month-labels');
+  if(!chart)return;
+  
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const today=new Date();
+  const startDate=new Date(today);
+  startDate.setDate(today.getDate()-364);
+  
+  const startDay=startDate.getDay();
+  const offset=startDay===0?6:startDay-1;
+  startDate.setDate(startDate.getDate()-offset);
+  
+  const totalDays=371;
+  const colWidth=13;
+  let html='';
+  let labelHtml='';
+  let seenMonths=new Set();
+  
+  for(let i=0;i<totalDays;i++){
+    const d=new Date(startDate);
+    d.setDate(startDate.getDate()+i);
+    const ds=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+    const xp=state.weeklyXP[ds]||0;
+    
+    let level=0;
+    if(xp>0)level=1;
+    if(xp>=25)level=2;
+    if(xp>=60)level=3;
+    if(xp>=120)level=4;
+    
+    const dayOfWeek=d.getDay()===0?6:d.getDay()-1;
+    
+    if(dayOfWeek===0&&d.getDate()<=7){
+      const m=d.getMonth();
+      if(!seenMonths.has(m)){
+        seenMonths.add(m);
+        const col=Math.floor(i/7);
+        labelHtml+=`<span style="position:absolute;left:${col*colWidth}px;font-family:var(--mono);font-size:9px;color:var(--text-dim);white-space:nowrap">${months[m]}</span>`;
+      }
+    }
+    
+    html+=`<div class="github-cell l${level}" title="${ds}: ${xp} XP"></div>`;
   }
-  grid.innerHTML=cells;
+  
+  chart.innerHTML=html;
+  if(labels)labels.innerHTML=labelHtml;
 }
 
 function addStatPoint(k){
@@ -658,30 +823,226 @@ function addStatPoint(k){
   checkAchievements();persist();renderStatus();
 }
 
-function editName(){const n=prompt('Hunter name:',state.name);if(n&&n.trim()){state.name=n.trim();persist();renderStatus();}}
+function editName(){
+  Swal.fire({
+    title:'Hunter Name',
+    input:'text',
+    inputValue:state.name,
+    background:'#0f1929',
+    color:'#c8d8f0',
+    confirmButtonText:'Save',
+    showCancelButton:true,
+    cancelButtonText:'Cancel',
+    inputValidator:(value)=>{if(!value||!value.trim())return'Name cannot be empty';}
+  }).then((result)=>{
+    if(result.isConfirmed&&result.value){
+      state.name=result.value.trim();
+      persist();renderStatus();
+    }
+  });
+}
 
-// QUESTS
-let _qFormSubs=[];
-function openQuestModal(){_qFormSubs=[];document.getElementById('q-name').value='';document.getElementById('st-preview').innerHTML='';document.getElementById('quest-modal').classList.add('open');document.getElementById('q-name').focus();}
-function closeQuestModal(){document.getElementById('quest-modal').classList.remove('open');}
+function useRestDay(){
+  const week=getWeekKey();
+  if(state.restDayWeek===week||state.restDayActive)return;
+  Swal.fire({
+    title:'Use Rest Day?',
+    text:'Once per week. If you miss tomorrow, your streak will be protected.',
+    icon:'question',
+    iconColor:'#3b9eff',
+    background:'#0f1929',
+    color:'#c8d8f0',
+    showCancelButton:true,
+    confirmButtonText:'Activate',
+    cancelButtonText:'Cancel'
+  }).then((result)=>{
+    if(result.isConfirmed){
+      state.restDayActive=true;state.restDayWeek=week;
+      persist();renderStatus();
+      notify('🛡️ Rest Day activated!','#3b9eff');
+      haptic('success');
+    }
+  });
+}
+
+// ===================== QUESTS =====================
+function openQuestModal(){
+  _qFormSubs=[];
+  Swal.fire({
+    title:'<span style="font-family:var(--mono);font-size:13px;color:var(--blue)">▸ NEW QUEST</span>',
+    html:`
+      <div style="text-align:left">
+        <div class="form-field">
+          <label class="form-label">Template</label>
+          <select class="form-select" id="q-template" onchange="applyTemplate()">
+            <option value="">-- Custom --</option>
+            <option value="workout">Morning Workout (30 min)</option>
+            <option value="read">Read 20 Pages</option>
+            <option value="water">Drink 3L Water</option>
+            <option value="meditate">Meditate 10 Minutes</option>
+            <option value="focus">Deep Work Session (2h)</option>
+            <option value="social">Check in with a Friend</option>
+            <option value="sleep">Sleep 8 Hours</option>
+          </select>
+        </div>
+        <div class="form-field"><label class="form-label">Quest Name</label><input class="form-input" id="q-name" placeholder="e.g. Run 5km without stopping"/></div>
+        <div class="form-field"><label class="form-label">Category</label>
+          <select class="form-select" id="q-cat">
+            <option value="fitness">Fitness & Health</option>
+            <option value="habits">Habits & Daily Tasks</option>
+            <option value="social">Social & Relationships</option>
+            <option value="study">Study & Skills</option>
+            <option value="work">Work & Career</option>
+          </select>
+        </div>
+        <div class="form-field"><label class="form-label">Difficulty</label>
+          <select class="form-select" id="q-diff">
+            <option value="F">F — Trivial (5 XP)</option>
+            <option value="E" selected>E — Easy (15 XP)</option>
+            <option value="D">D — Normal (30 XP)</option>
+            <option value="C">C — Hard (60 XP)</option>
+            <option value="B">B — Very Hard (100 XP)</option>
+            <option value="A">A — Elite (200 XP)</option>
+            <option value="S">S — Legendary (500 XP)</option>
+          </select>
+        </div>
+        <div class="form-field"><label class="form-label">Stat Rewarded</label>
+          <select class="form-select" id="q-stat">
+            <option value="STR">STR — Strength</option>
+            <option value="AGI">AGI — Agility</option>
+            <option value="INT">INT — Intelligence</option>
+            <option value="CHA">CHA — Charisma</option>
+            <option value="VIT">VIT — Vitality</option>
+            <option value="SEN">SEN — Sense</option>
+          </select>
+        </div>
+        <div class="form-field"><label class="form-label">Type</label>
+          <select class="form-select" id="q-type">
+            <option value="once">One-time quest</option>
+            <option value="daily">Daily (resets midnight)</option>
+            <option value="weekly">Weekly</option>
+          </select>
+        </div>
+        <div class="form-field"><label class="form-label">Due Date (optional)</label><input class="form-input" id="q-due" type="date"/></div>
+        <div class="form-field"><label class="form-label">Penalty for failure</label>
+          <select class="form-select" id="q-penalty">
+            <option value="0">No penalty</option>
+            <option value="5">Lose 5 XP</option>
+            <option value="15">Lose 15 XP</option>
+            <option value="30">Lose 30 XP</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Sub-tasks (optional)</label>
+          <div class="subtask-input-row">
+            <input class="form-input" id="st-input" placeholder="Add sub-task..."/>
+            <button type="button" onclick="addSubtaskToForm()">+ Add</button>
+          </div>
+          <div class="subtask-preview" id="st-preview"></div>
+        </div>
+      </div>
+    `,
+    background:'#0f1929',
+    color:'#c8d8f0',
+    confirmButtonText:'Add Quest',
+    cancelButtonText:'Cancel',
+    showCancelButton:true,
+    focusConfirm:false,
+    allowOutsideClick:true,
+    didOpen:()=>{
+      document.getElementById('q-name').focus();
+      const stInput=document.getElementById('st-input');
+      if(stInput){
+        stInput.addEventListener('keydown',(e)=>{
+          if(e.key==='Enter'){e.preventDefault();e.stopPropagation();addSubtaskToForm();}
+        });
+      }
+      renderSubtaskPreview();
+    },
+    preConfirm:()=>{
+      const name=document.getElementById('q-name').value.trim();
+      if(!name){Swal.showValidationMessage('Quest name is required');return false;}
+      return{
+        name,
+        cat:document.getElementById('q-cat').value,
+        diff:document.getElementById('q-diff').value,
+        stat:document.getElementById('q-stat').value,
+        type:document.getElementById('q-type').value,
+        due:document.getElementById('q-due').value||null,
+        penalty:parseInt(document.getElementById('q-penalty').value)||0,
+        subtasks:_qFormSubs.map(s=>({...s}))
+      };
+    }
+  }).then((result)=>{
+    if(result.isConfirmed&&result.value){
+      const q={id:_qId++,...result.value,done:false,doneDate:null};
+      state.quests.push(q);
+      addLog(`Quest registered: "${q.name}" [${q.diff}]`,'system',null,'#3b9eff');
+      persist();renderQuests();
+      notify(`✓ Quest added: ${q.name}`,'#3b9eff');
+    }
+  });
+}
+
+function openTemplatesModal(){
+  Swal.fire({
+    title:'<span style="font-family:var(--mono);font-size:13px;color:var(--blue)">▸ QUEST TEMPLATES</span>',
+    html:`
+      <div style="display:flex;flex-direction:column;gap:8px;text-align:left;margin-top:8px">
+        <button class="btn-primary" style="width:100%;justify-content:flex-start" onclick="useTemplate('workout')"><i class="ti ti-run"></i> Morning Workout — Fitness [D]</button>
+        <button class="btn-primary" style="width:100%;justify-content:flex-start" onclick="useTemplate('read')"><i class="ti ti-book"></i> Read 20 Pages — Study [E]</button>
+        <button class="btn-primary" style="width:100%;justify-content:flex-start" onclick="useTemplate('water')"><i class="ti ti-droplet"></i> Drink 3L Water — Habits [E]</button>
+        <button class="btn-primary" style="width:100%;justify-content:flex-start" onclick="useTemplate('meditate')"><i class="ti ti-peace"></i> Meditate 10m — Habits [D]</button>
+        <button class="btn-primary" style="width:100%;justify-content:flex-start" onclick="useTemplate('focus')"><i class="ti ti-brain"></i> Deep Work 2h — Work [C]</button>
+        <button class="btn-primary" style="width:100%;justify-content:flex-start" onclick="useTemplate('social')"><i class="ti ti-message"></i> Friend Check-in — Social [E]</button>
+        <button class="btn-primary" style="width:100%;justify-content:flex-start" onclick="useTemplate('sleep')"><i class="ti ti-moon"></i> Sleep 8 Hours — Habits [D]</button>
+      </div>
+    `,
+    background:'#0f1929',
+    color:'#c8d8f0',
+    showConfirmButton:false,
+    showCancelButton:true,
+    cancelButtonText:'Close'
+  });
+}
+
+function applyTemplate(){
+  const key=document.getElementById('q-template').value;
+  if(!key||!TEMPLATES[key])return;
+  const t=TEMPLATES[key];
+  document.getElementById('q-name').value=t.name;
+  document.getElementById('q-cat').value=t.cat;
+  document.getElementById('q-diff').value=t.diff;
+  document.getElementById('q-stat').value=t.stat;
+  document.getElementById('q-type').value=t.type;
+}
+
+function useTemplate(key){
+  const t=TEMPLATES[key];if(!t)return;
+  const q={id:_qId++,name:t.name,cat:t.cat,diff:t.diff,stat:t.stat,type:t.type,due:null,penalty:0,subtasks:[],done:false,doneDate:null};
+  state.quests.push(q);
+  Swal.close();
+  addLog(`Quest registered: "${t.name}" [${t.diff}]`,'system',null,'#3b9eff');
+  persist();renderQuests();
+  notify(`✓ Template added: ${t.name}`,'#3b9eff');
+}
 
 function addSubtaskToForm(){
   const v=document.getElementById('st-input').value.trim();if(!v)return;
   _qFormSubs.push({text:v,done:false});
   document.getElementById('st-input').value='';
-  document.getElementById('st-preview').innerHTML=_qFormSubs.map((s,i)=>`<div class="subtask-preview-item">${s.text}<button onclick="_qFormSubs.splice(${i},1);document.getElementById('st-preview').innerHTML=''">×</button></div>`).join('');
+  renderSubtaskPreview();
 }
 
-function addQuest(){
-  const name=document.getElementById('q-name').value.trim();if(!name)return;
-  const diff=document.getElementById('q-diff').value;
-  const q={id:_qId++,name,cat:document.getElementById('q-cat').value,diff,stat:document.getElementById('q-stat').value,
-    type:document.getElementById('q-type').value,due:document.getElementById('q-due').value||null,
-    penalty:parseInt(document.getElementById('q-penalty').value),
-    subtasks:_qFormSubs.map(s=>({...s})),done:false,doneDate:null};
-  state.quests.push(q);
-  addLog(`Quest registered: "${name}" [${diff}]`,'system',null,'#3b9eff');
-  persist();closeQuestModal();renderQuests();
+function renderSubtaskPreview(){
+  const container=document.getElementById('st-preview');
+  if(!container)return;
+  container.innerHTML=_qFormSubs.map((s,i)=>`
+    <div class="subtask-preview-item">
+      ${s.text}
+      <button type="button" onclick="_qFormSubs.splice(${i},1);renderSubtaskPreview()">×</button>
+    </div>
+  `).join('');
 }
 
 function renderQuests(){
@@ -744,17 +1105,19 @@ function toggleQuest(id){
     state.totalXP+=earned;
     state.stats[q.stat]=Math.min(100,(state.stats[q.stat]||10)+1);
     state.statPoints+=Math.floor(earned/25);
-    if(!state.heatmap)state.heatmap={};state.heatmap[today]=(state.heatmap[today]||0)+earned;
+    state.weeklyXP[today]=(state.weeklyXP[today]||0)+earned;
     addLog(`Completed: "${q.name}"${mult>1?' ('+mult+'x streak bonus)':''}`, 'quest',earned,CAT[q.cat].color,q.cat);
     if(q.type==='once')state.quests=state.quests.filter(x=>x.id!==id);
     notify(`✓ ${q.name} — +${earned} XP`,'#3fd68a');
-    checkAchievements();checkRankUp();
+    haptic('success');playSuccess();
+    if(q.diff==='S'){spawnConfetti('#ff7c5c');playRankUp();}
+    checkAchievements();checkRankUp();checkLevelUp();
   }else{
     const baseXP=DIFF[q.diff]?.xp||15;
     q.done=false;q.doneDate=null;
     state.totalXP=Math.max(0,state.totalXP-baseXP);
     state.stats[q.stat]=Math.max(1,(state.stats[q.stat]||10)-1);
-    if(!state.heatmap)state.heatmap={};state.heatmap[today]=Math.max(0,(state.heatmap[today]||0)-baseXP);
+    state.weeklyXP[today]=Math.max(0,(state.weeklyXP[today]||0)-baseXP);
   }
   persist();renderStatus();renderQuests();renderLog();
 }
@@ -765,28 +1128,121 @@ function toggleSubtask(qId,si){
   persist();renderQuests();
 }
 
-function deleteQuest(id){state.quests=state.quests.filter(q=>q.id!==id);persist();renderQuests();}
+function deleteQuest(id){
+  const q=state.quests.find(x=>x.id===id);
+  if(!q)return;
+  Swal.fire({
+    title:'Delete Quest?',
+    text:`"${q.name}" will be permanently removed.`,
+    icon:'warning',
+    iconColor:'#e85555',
+    background:'#0f1929',
+    color:'#c8d8f0',
+    showCancelButton:true,
+    confirmButtonText:'Delete',
+    cancelButtonText:'Cancel',
+    confirmButtonColor:'#e85555'
+  }).then((result)=>{
+    if(result.isConfirmed){
+      state.quests=state.quests.filter(x=>x.id!==id);
+      persist();renderQuests();
+      notify('Quest deleted','#e85555');
+    }
+  });
+}
 
 function checkRankUp(){
   const r=getRank(state.totalXP);
   const prev=state._lastRank;
-  if(r.rank!==prev){state._lastRank=r.rank;addLog(`Rank advanced: ${r.rank} — ${r.label}`,'rank',null,r.color);notify(`⬆ RANK UP: ${r.rank} ${r.label}`,r.color);}
+  if(r.rank!==prev){
+    state._lastRank=r.rank;
+    addLog(`Rank advanced: ${r.rank} — ${r.label}`,'rank',null,r.color);
+    Swal.fire({
+      title:'RANK UP!',
+      html:`<div style="font-family:var(--mono);font-size:48px;color:${r.color};margin:10px 0">${r.rank}</div><div style="color:var(--text-dim);font-size:12px">${r.label}</div>`,
+      background:'#0f1929',
+      color:'#c8d8f0',
+      confirmButtonText:'Continue',
+      allowOutsideClick:false,
+      didOpen:()=>{spawnConfetti(r.color);playRankUp();haptic('heavy');}
+    });
+  }
 }
 
-// SKILLS
+function checkLevelUp(){
+  const{level}=getLevel(state.totalXP);
+  if(state._lastLevel&&level>state._lastLevel){
+    state._lastLevel=level;
+    addLog(`Level up! You are now LV ${level}`,'level',null,'#f5b731');
+    Swal.fire({
+      title:'LEVEL UP!',
+      html:`<div style="font-family:var(--mono);font-size:56px;color:var(--gold);margin:10px 0">${level}</div><div style="color:var(--text-dim);font-size:12px">Your power grows...</div>`,
+      background:'#0f1929',
+      color:'#c8d8f0',
+      confirmButtonText:'Continue',
+      allowOutsideClick:false,
+      didOpen:()=>{spawnConfetti('#f5b731');playLevelUp();haptic('heavy');}
+    });
+  }else if(!state._lastLevel){
+    state._lastLevel=level;
+  }
+}
+
+// ===================== SKILLS =====================
 function openSkillModal(){
-  const sel=document.getElementById('sk-prereq');
-  sel.innerHTML='<option value="">None</option>'+state.skills.map(s=>`<option value="${s.id}">${s.name} (LV ${s.level})</option>`).join('');
-  document.getElementById('sk-name').value='';
-  document.getElementById('skill-modal').classList.add('open');document.getElementById('sk-name').focus();
-}
-function closeSkillModal(){document.getElementById('skill-modal').classList.remove('open');}
-
-function addSkill(){
-  const name=document.getElementById('sk-name').value.trim();if(!name)return;
-  state.skills.push({id:_skId++,name,cat:document.getElementById('sk-cat').value,stat:document.getElementById('sk-stat').value,level:1,xp:0,lastTrained:TODAY(),prereq:document.getElementById('sk-prereq').value});
-  addLog(`Skill registered: "${name}"`,'system',null,'#3b9eff');
-  persist();closeSkillModal();renderSkills();
+  const prereqOptions='<option value="">None</option>'+state.skills.map(s=>`<option value="${s.id}">${s.name} (LV ${s.level})</option>`).join('');
+  Swal.fire({
+    title:'<span style="font-family:var(--mono);font-size:13px;color:var(--blue)">▸ NEW SKILL</span>',
+    html:`
+      <div style="text-align:left">
+        <div class="form-field"><label class="form-label">Skill Name</label><input class="form-input" id="sk-name" placeholder="e.g. Python Programming"/></div>
+        <div class="form-field"><label class="form-label">Category</label>
+          <select class="form-select" id="sk-cat">
+            <option value="fitness">Fitness & Health</option>
+            <option value="habits">Habits & Daily Tasks</option>
+            <option value="social">Social & Relationships</option>
+            <option value="study">Study & Skills</option>
+            <option value="work">Work & Career</option>
+          </select>
+        </div>
+        <div class="form-field"><label class="form-label">Linked Stat</label>
+          <select class="form-select" id="sk-stat">
+            <option value="STR">STR</option><option value="AGI">AGI</option>
+            <option value="INT">INT</option><option value="CHA">CHA</option>
+            <option value="VIT">VIT</option><option value="SEN">SEN</option>
+          </select>
+        </div>
+        <div class="form-field"><label class="form-label">Prerequisite</label>
+          <select class="form-select" id="sk-prereq">${prereqOptions}</select>
+        </div>
+      </div>
+    `,
+    background:'#0f1929',
+    color:'#c8d8f0',
+    confirmButtonText:'Add Skill',
+    cancelButtonText:'Cancel',
+    showCancelButton:true,
+    focusConfirm:false,
+    didOpen:()=>document.getElementById('sk-name').focus(),
+    preConfirm:()=>{
+      const name=document.getElementById('sk-name').value.trim();
+      if(!name){Swal.showValidationMessage('Skill name is required');return false;}
+      return{
+        name,
+        cat:document.getElementById('sk-cat').value,
+        stat:document.getElementById('sk-stat').value,
+        prereq:document.getElementById('sk-prereq').value
+      };
+    }
+  }).then((result)=>{
+    if(result.isConfirmed&&result.value){
+      const s=result.value;
+      state.skills.push({id:_skId++,name:s.name,cat:s.cat,stat:s.stat,level:1,xp:0,lastTrained:TODAY(),prereq:s.prereq});
+      addLog(`Skill registered: "${s.name}"`,'system',null,'#3b9eff');
+      persist();renderSkills();
+      notify(`✓ Skill added: ${s.name}`,'#3b9eff');
+    }
+  });
 }
 
 function renderSkills(){
@@ -828,21 +1284,50 @@ function trainSkill(id){
     state.stats[s.stat]=Math.min(100,(state.stats[s.stat]||10)+1);
     addLog(`Skill leveled up: "${s.name}" → LV ${s.level} (+1 ${s.stat})`,'skill',null,'#9f7aea');
     notify(`⬆ ${s.name} → LV ${s.level}!`,'#9f7aea');
+    haptic('success');spawnConfetti('#9f7aea');playLevelUp();
     checkAchievements();
   }else{addLog(`Trained: "${s.name}" (+${gain} skill XP)`,'skill',null,CAT[s.cat].color);}
   persist();renderSkills();renderStatus();renderLog();
 }
 
-function deleteSkill(id){state.skills=state.skills.filter(s=>s.id!==id);persist();renderSkills();}
+function deleteSkill(id){
+  const s=state.skills.find(x=>x.id===id);
+  Swal.fire({
+    title:'Delete Skill?',
+    text:s?`"${s.name}" will be removed.`:'This skill will be removed.',
+    icon:'warning',
+    iconColor:'#e85555',
+    background:'#0f1929',
+    color:'#c8d8f0',
+    showCancelButton:true,
+    confirmButtonText:'Delete',
+    cancelButtonText:'Cancel',
+    confirmButtonColor:'#e85555'
+  }).then((result)=>{
+    if(result.isConfirmed){
+      state.skills=state.skills.filter(x=>x.id!==id);
+      persist();renderSkills();
+      notify('Skill deleted','#e85555');
+    }
+  });
+}
 
-// ACHIEVEMENTS
+// ===================== ACHIEVEMENTS =====================
 function checkAchievements(){
   let newUnlock=false;
   ACHIEVEMENTS.forEach(a=>{
     if(!state.achievements.includes(a.id)&&a.check(state)){
       state.achievements.push(a.id);newUnlock=true;
       addLog(`Achievement unlocked: "${a.name}"`,'achievement',null,a.color||'#f5b731');
-      notify(`🏆 ${a.name}: ${a.desc}`,a.color||'#f5b731');
+      Swal.fire({
+        title:'ACHIEVEMENT UNLOCKED',
+        html:`<div style="font-size:32px;margin:8px 0">${a.icon}</div><div style="color:var(--text-bright);font-size:16px;font-weight:600">${a.name}</div><div style="color:var(--text-dim);font-size:11px;font-family:var(--mono);margin-top:4px">${a.desc}</div>`,
+        background:'#0f1929',
+        color:'#c8d8f0',
+        confirmButtonText:'Awesome',
+        allowOutsideClick:false,
+        didOpen:()=>{spawnConfetti(a.color||'#f5b731');playRankUp();haptic('heavy');}
+      });
     }
   });
   if(newUnlock){persist();renderAchievements();}
@@ -861,7 +1346,7 @@ function renderAchievements(){
   }).join('');
 }
 
-// LOG
+// ===================== LOG =====================
 function addLog(msg,type,xp,color,cat){
   const now=new Date();
   const time=now.toLocaleDateString('en-IN',{month:'short',day:'numeric'})+' '+now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
@@ -878,9 +1363,26 @@ function renderLog(){
       ${l.xp?`<div class="log-xp">+${l.xp} XP</div>`:''}
     </div>`).join('');
 }
-function clearLog(){state.log=[];persist();renderLog();}
+function clearLog(){
+  Swal.fire({
+    title:'Clear Log?',
+    text:'All log entries will be permanently removed.',
+    icon:'warning',
+    iconColor:'#f5b731',
+    background:'#0f1929',
+    color:'#c8d8f0',
+    showCancelButton:true,
+    confirmButtonText:'Clear',
+    cancelButtonText:'Cancel'
+  }).then((result)=>{
+    if(result.isConfirmed){
+      state.log=[];
+      persist();renderLog();
+    }
+  });
+}
 
-// DATA
+// ===================== DATA =====================
 function exportData(){
   const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='arise_save.json';a.click();
@@ -888,34 +1390,127 @@ function exportData(){
 function importData(e){
   const f=e.target.files[0];if(!f)return;
   const r=new FileReader();r.onload=ev=>{
-    try{const d=JSON.parse(ev.target.result);state=d;persist();init();notify('Save imported successfully','#3fd68a');}
-    catch{notify('Invalid save file','#e85555');}
+    try{
+      const d=JSON.parse(ev.target.result);
+      if(!d.stats||!d.quests||!d.skills){notify('Invalid save file','#e85555');return;}
+      state=d;
+      for(const k in defaultState){if(state[k]===undefined)state[k]=JSON.parse(JSON.stringify(defaultState[k]));}
+      _qId=Math.max(0,...state.quests.map(q=>q.id),0)+1;
+      _skId=Math.max(0,...state.skills.map(s=>s.id),0)+1;
+      persist();init();
+      notify('Save imported successfully','#3fd68a');
+    }catch{notify('Invalid save file','#e85555');}
   };r.readAsText(f);
 }
 function resetAll(){
-  if(!confirm('Reset ALL progress? This cannot be undone.'))return;
-  localStorage.removeItem('arise_v2');location.reload();
+  Swal.fire({
+    title:'Reset ALL progress?',
+    text:'This cannot be undone. All quests, skills, XP, and achievements will be lost forever.',
+    icon:'error',
+    iconColor:'#e85555',
+    background:'#0f1929',
+    color:'#c8d8f0',
+    showCancelButton:true,
+    confirmButtonText:'Yes, reset everything',
+    cancelButtonText:'Cancel',
+    confirmButtonColor:'#e85555',
+    reverseButtons:true
+  }).then((result)=>{
+    if(result.isConfirmed){
+      localStorage.removeItem('arise_v2');
+      location.reload();
+    }
+  });
 }
 
+// ===================== TABS & NAVIGATION =====================
 function showTab(name,btn){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   if(btn)btn.classList.add('active');
-  if(name==='status'){renderStatus();}
-  if(name==='quests'){renderQuests();}
-  if(name==='skills'){renderSkills();}
-  if(name==='achieve'){renderAchievements();}
-  if(name==='log'){renderLog();}
+  if(name==='status')renderStatus();
+  if(name==='quests')renderQuests();
+  if(name==='skills')renderSkills();
+  if(name==='achieve')renderAchievements();
+  if(name==='log')renderLog();
 }
 
+// Swipe support
+let touchStartX=0,touchStartY=0;
+document.addEventListener('touchstart',e=>{
+  touchStartX=e.changedTouches[0].screenX;
+  touchStartY=e.changedTouches[0].screenY;
+},{passive:true});
+document.addEventListener('touchend',e=>{
+  const diffX=touchStartX-e.changedTouches[0].screenX;
+  const diffY=touchStartY-e.changedTouches[0].screenY;
+  if(Math.abs(diffY)>Math.abs(diffX)*1.5)return;
+  const tabs=['status','quests','skills','achieve','log','settings'];
+  const current=tabs.find(t=>document.getElementById('tab-'+t).classList.contains('active'));
+  const idx=tabs.indexOf(current);
+  const btns=document.querySelectorAll('.nav-btn');
+  if(Math.abs(diffX)>50){
+    if(diffX>0&&idx<tabs.length-1)showTab(tabs[idx+1],btns[idx+1]);
+    else if(diffX<0&&idx>0)showTab(tabs[idx-1],btns[idx-1]);
+  }
+},{passive:true});
+
+// Keyboard: Escape closes modals (Swal handles this natively)
+
+// ===================== DAILY REVIEW =====================
+function openReviewModal(){
+  const yesterday=new Date();yesterday.setDate(yesterday.getDate()-1);
+  const yStr=yesterday.toLocaleDateString('en-IN',{month:'short',day:'numeric'});
+  const yQuests=state.log.filter(l=>l.type==='quest'&&l.time&&l.time.includes(yStr));
+  const yXP=yQuests.reduce((a,l)=>a+(l.xp||0),0);
+  
+  Swal.fire({
+    title:'<span style="font-family:var(--mono);font-size:13px;color:var(--blue)">▸ DAILY REVIEW</span>',
+    html:`
+      <div style="text-align:left;font-family:var(--mono);font-size:11px;color:var(--text-dim);line-height:1.8">
+        <div>Yesterday you earned <span style="color:var(--gold);font-weight:600">${yXP} XP</span></div>
+        <div>Quests completed: <span style="color:var(--gold);font-weight:600">${yQuests.length}</span></div>
+        <div>Current streak: <span style="color:var(--gold);font-weight:600">${state.streak} days</span></div>
+        <div style="margin-top:10px;color:var(--text-dim)">"${state.streak>0?'Keep the momentum going.':'Every hunter starts somewhere.'}"</div>
+      </div>
+    `,
+    background:'#0f1929',
+    color:'#c8d8f0',
+    confirmButtonText:'Continue',
+    allowOutsideClick:false
+  }).then(()=>{
+    state._reviewShown=TODAY();
+    persist();
+  });
+}
+
+// ===================== INIT =====================
 function init(){
   checkDailyReset();
   if(!state.log.length)addLog('System initialized. Welcome, Hunter.','system',null,'#3b9eff');
   if(!state._lastRank)state._lastRank=getRank(state.totalXP).rank;
+  if(!state._lastLevel)state._lastLevel=getLevel(state.totalXP).level;
+  
   renderStatus();renderQuests();renderSkills();renderAchievements();renderLog();
-  checkAchievements();
+  checkAchievements();checkLevelUp();
+  
+  if(state.lastActiveDate){
+    const yesterday=new Date();yesterday.setDate(yesterday.getDate()-1);
+    const yStr=yesterday.getFullYear()+'-'+String(yesterday.getMonth()+1).padStart(2,'0')+'-'+String(yesterday.getDate()).padStart(2,'0');
+    if(state._reviewShown!==TODAY()&&state.lastActiveDate===yStr){
+      openReviewModal();
+    }
+  }
 }
 
 init();
+
+// Service Worker for PWA
+if('serviceWorker' in navigator){
+  const swCode=`self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(clients.claim()));self.addEventListener('fetch',e=>e.respondWith(fetch(e.request).catch(()=>new Response('Offline'))));`;
+  navigator.serviceWorker.register('data:text/javascript;base64,'+btoa(swCode));
+}
 </script>
+</body>
+</html>
